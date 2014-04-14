@@ -34,5 +34,13 @@
         // or SQLServer, the event is not raised.
 
     }
+
+
+    void Application_PostRequestHandlerExecute(Object sender, EventArgs e)
+    {
+        HttpApplication app = (HttpApplication)sender;  //cast
+        app.Context.Response.Write("<hr /><center><i>" +
+            "512 Test</i></center>");
+    }
        
 </script>
