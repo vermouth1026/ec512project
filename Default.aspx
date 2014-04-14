@@ -8,9 +8,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-        <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a></div>
+        <div>
+            <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a>
+        </div>
     </form>
 </body>
 </html>
