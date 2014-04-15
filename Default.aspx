@@ -15,7 +15,7 @@
             <div style="width: 45%; float: left">
                 <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a>
             </div>
-            <div style="width: 45%; float: right">
+            <div style="width: 45%; float: right; text-align: right">
                 <a href="login.aspx">Log In</a> <a href="register.aspx">Register</a>
             </div>
             <br style="clear: both" />
