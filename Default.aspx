@@ -5,7 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,8 +12,12 @@
 
         </div>
     <div>
+        <div style="float:left;width: 45%">
     
-        <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a></div>
+            <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a></div>
+        <div style="float:right;width: 45%;text-align:right">
+    
+            <a href="login.aspx">Log In</a> <a href="register.aspx">Register</a></div></div>
     </form>
 </body>
 </html>
