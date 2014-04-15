@@ -1,7 +1,7 @@
 ﻿body {
     background-color: lavender;
     text-align: center;
-    font-family: 'Arial Unicode MS';
+    font-family: 'Trebuchet MS';
     font-size: medium;
 }
 
@@ -11,10 +11,15 @@ div {
 }
 
 input, select {
-    font-family: 'Arial Unicode MS';
+    font-family: 'Trebuchet MS';
     font-size: medium;
 }
 
 a {
     text-decoration: none;
+    color: cornflowerblue;
+}
+
+h3 {
+    color: purple;
 }

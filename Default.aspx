@@ -9,14 +9,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="width: 1000px; background-color: white">
+        <div style="width: 1000px; border: 1px solid silver; background-color: white">
             <div id="logo" runat="server" style="width: 1000px; height: 100px">
             </div>
-            <div id="navigate" style="width: 45%; float: left; padding-left: 10px">
-                <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a>
+            <div id="navigate" style="width: 45%; float: left; padding-left: 10px; padding-top: 10px; height: 30px">
+                <a href="Default.aspx">Home</a>&nbsp&nbsp<a href="courselist.aspx">Course</a>
             </div>
-            <div id="account" style="width: 45%; float: right; text-align: right; padding-right: 10px">
-                <a href="login.aspx">Log In</a> <a href="register.aspx">Register</a>
+            <div id="account" style="width: 45%; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px">
+                <a href="login.aspx">Log In</a>&nbsp&nbsp<a href="register.aspx">Register</a>
             </div>
             <br style="clear: both" />
             <div style="width: 490px; float: left; text-align: left; height: 160px; border: 1px solid silver; border-left: 0px; border-right: 0px; padding-left: 10px">
@@ -65,7 +65,7 @@
                 </div>
                 <br style="clear: both" />
             </div>
-
+            <br style="clear: both" />
             <div style="padding-left: 10px; padding-right: 10px; height: 800px">
                 <h3>Recent Reviews</h3>
                 <div>
