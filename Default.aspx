@@ -12,15 +12,15 @@
         <div style="width: 1000px; background-color: white">
             <div id="logo" runat="server" style="width: 1000px; height: 100px">
             </div>
-            <div id="navigate" style="width: 45%; float: left">
+            <div id="navigate" style="width: 45%; float: left; padding-left:10px">
                 <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a>
             </div>
-            <div id="account" style="width: 45%; float: right; text-align: right">
+            <div id="account" style="width: 45%; float: right; text-align: right; padding-right:10px">
                 <a href="login.aspx">Log In</a> <a href="register.aspx">Register</a>
             </div>
             <br style="clear: both" />
 
-            <div>
+            <div style="padding:0px 10px 0px 10px">
                 <div>
                     <h3>Recent Reviews</h3>
                 </div>
