@@ -11,10 +11,6 @@
     <form id="form1" runat="server">
         <div id="logo" runat="server">
         </div>
-        <div>
-            <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a>
-        </div>
-<<<<<<< HEAD
     <div>
         <div id="navigation" style="float:left;width: 45%">
     
@@ -22,8 +18,6 @@
         <div id="account" style="float:right;width: 45%;text-align:right">
     
             <a href="login.aspx">Log In</a> <a href="register.aspx">Register</a></div></div>
-=======
->>>>>>> c2d73c1c8dc4ae694ba3e54f8830800a39e2bb58
     </form>
 </body>
 </html>
