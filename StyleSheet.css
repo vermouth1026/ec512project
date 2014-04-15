@@ -1,12 +1,8 @@
 ﻿body {
     background-color: lavender;
     text-align: center;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: 'Arial Unicode MS';
     font-size: medium;
-}
-
-h1, h2, h3 {
-    font-family: "comic Sans MS";
 }
 
 div {
@@ -15,7 +11,10 @@ div {
 }
 
 input, select {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: 'Arial Unicode MS';
     font-size: medium;
 }
 
+a {
+    text-decoration: none;
+}
