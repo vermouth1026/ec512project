@@ -9,16 +9,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="width: 1000px; background-color: white; border: 1px solid silver">
+        <div style="width: 1000px; background-color: white">
             <div id="logo" runat="server" style="width: 1000px; height: 100px">
             </div>
-            <div style="width: 45%; float: left; height: 30px">
+            <div id="navigate" style="width: 45%; float: left; padding-left: 10px">
                 <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a>
             </div>
-            <div style="width: 45%; float: right; text-align: right; height: 30px">
+            <div id="account" style="width: 45%; float: right; text-align: right; padding-right: 10px">
                 <a href="login.aspx">Log In</a> <a href="register.aspx">Register</a>
             </div>
-            <div style="width: 490px; float: left; text-align: left; height: 150px; border: 1px solid silver; border-left: 0px; border-right: 0px; padding-left: 10px">
+            <br style="clear: both" />
+            <div style="width: 490px; float: left; text-align: left; height: 160px; border: 1px solid silver; border-left: 0px; border-right: 0px; padding-left: 10px">
                 <h3>Highest Scored Courses</h3>
                 <div style="width: 350px; float: left"><a id="hsc1" href="course.aspx?id=ec500">EC500 XXXXXX</a></div>
                 <div style="width: 140px; float: left; text-align: center">
@@ -41,7 +42,7 @@
                 </div>
                 <br style="clear: both" />
             </div>
-            <div style="width: 489px; float: right; text-align: left; height: 150px; border: 1px solid silver; border-right: 0px; padding-left: 10px">
+            <div style="width: 489px; float: right; text-align: left; height: 160px; border: 1px solid silver; border-right: 0px; padding-left: 10px">
                 <h3>Most Commented Courses</h3>
                 <div style="width: 349px; float: left"><a id="mcc1" href="course.aspx?id=ec500">EC500 XXXXXX</a></div>
                 <div style="width: 140px; float: left; text-align: center">
@@ -64,8 +65,56 @@
                 </div>
                 <br style="clear: both" />
             </div>
-            <br style="clear: both" />
+
+            <div style="padding-left: 10px; padding-right: 10px; height: 800px">
+                <h3>Recent Reviews</h3>
+                <div>
+                    <div id="profile1" style="width: 25%; float: left; height: 200px">
+                    </div>
+                    <div style="width: 70%; float: right; height: 200px">
+                        <div>
+                            <div id="rcc1" style="float: left; width: 45%">
+                            </div>
+                            <div id="rcs1_0" style="float: right; width: 45%; text-align: right">
+                            </div>
+                        </div>
+                        <div id="comment1">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="profile2" style="width: 25%; float: left; height: 200px">
+                    </div>
+                    <div style="width: 70%; float: right; height: 200px">
+                        <div>
+                            <div id="rcc2" style="float: left; width: 45%">
+                            </div>
+                            <div id="rcs2_0" style="float: right; width: 45%; text-align: right">
+                            </div>
+                        </div>
+                        <div id="comment2">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="profile3" style="width: 25%; float: left; height: 200px">
+                    </div>
+                    <div style="width: 70%; float: right; height: 200px">
+                        <div>
+                            <div id="rcc3" style="float: left; width: 45%">
+                            </div>
+                            <div id="rcs3_0" style="float: right; width: 45%; text-align: right">
+                            </div>
+                        </div>
+                        <div id="comment3">
+                        </div>
+                    </div>
+                </div>
+                <br style="clear: both" />
+            </div>
         </div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [COURSE]"></asp:SqlDataSource>
+
     </form>
 </body>
 </html>
