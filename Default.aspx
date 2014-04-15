@@ -40,7 +40,6 @@
                 </div>
                 <div>
                     <div id="profile2" style="width: 25%; float: left; height: 200px">
-                        hehe
                     </div>
                     <div style="width: 70%; float: right; height: 200px">
                         <div>
@@ -55,7 +54,6 @@
                 </div>
                 <div>
                     <div id="profile3" style="width: 25%; float: left; height: 200px">
-                        haha
                     </div>
                     <div style="width: 70%; float: right; height: 200px">
                         <div>
