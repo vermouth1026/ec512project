@@ -9,11 +9,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="width: 1000px">
-            <div id="logo" runat="server" style="width: 1000px; height: 100px; background-color: white"></div>
-            <br />
-            <div style="width: 1000px; height: 50px; background-color: white">
+        <div style="width: 1000px; background-color: white">
+            <div id="logo" runat="server" style="width: 1000px; height: 100px">
+            </div>
+            <div style="width: 45%; float:left">
                 <a href="Default.aspx">Home</a> <a href="courselist.aspx">Course</a>
+            </div>
+            <div style="width: 45%; float:right; text-align: right">
+                <a href="login.aspx">Log In</a> <a href="register.aspx">Register</a>
             </div>
         </div>
     </form>
