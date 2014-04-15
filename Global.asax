@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%@ Application Language="C#" %>
+=======
+﻿<%@ Application Language="C#" %>
+>>>>>>> 9b10802ea8f6037ecda010dcdf556c7fff1b3e11
 
 <script runat="server">
 
@@ -41,6 +45,10 @@
         HttpApplication app = (HttpApplication)sender;  //cast
         app.Context.Response.Write("<hr /><center><i>" +
             "512 Test</i></center>");
+<<<<<<< HEAD
 
+=======
+    }
+>>>>>>> 9b10802ea8f6037ecda010dcdf556c7fff1b3e11
        
 </script>
