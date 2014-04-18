@@ -10,12 +10,12 @@
 <body>
     <form id="form1" runat="server">
         <div style="width: 1000px; border: 1px solid silver; background-color: white">
-            <div id="logo" runat="server" style="width: 1000px; height: 100px">
+            <div id="logo" runat="server" style="width: 1000px; height: 120px">
             </div>
-            <div id="navigate" style="width: 45%; float: left; padding-left: 10px; padding-top: 10px; height: 30px">
+            <div id="navigate" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk; border-top: 1px solid silver">
                 <a href="Default.aspx">Home</a>&nbsp&nbsp<a href="courselist.aspx">Course</a>
             </div>
-            <div id="account" style="width: 45%; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px">
+            <div id="account" style="width: 490px; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px; background-color: cornsilk; border-top: 1px solid silver">
                 <a href="login.aspx">Log In</a>&nbsp&nbsp<a href="register.aspx">Register</a>
             </div>
             <br style="clear: both" />

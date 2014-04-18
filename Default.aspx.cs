@@ -17,7 +17,7 @@ public partial class _Default : System.Web.UI.Page
     {
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select * from COURSE order by Cmt_Num desc";
+        string cmdstr = "select * from COURSE order by Comment_Count desc";
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
         string output = "";
@@ -30,6 +30,6 @@ public partial class _Default : System.Web.UI.Page
         }
         conn.Close();
 
-        logo.InnerHtml = output;
+        //logo.InnerHtml = output;
     }
 }

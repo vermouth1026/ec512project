@@ -20,6 +20,10 @@ a {
     color: cornflowerblue;
 }
 
+    a:hover {
+        color: crimson;
+    }
+
 h3 {
     color: purple;
 }
