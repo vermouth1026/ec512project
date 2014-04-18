@@ -12,60 +12,64 @@
         <div style="width: 1000px; border: 1px solid silver; background-color: white">
             <div id="logo" runat="server" style="width: 1000px; height: 120px">
             </div>
-            <div id="navigate" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk; border-top: 1px solid silver">
-                <a href="Default.aspx">Home</a>&nbsp&nbsp<a href="courselist.aspx">Course</a>
-            </div>
-            <div id="account" style="width: 490px; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px; background-color: cornsilk; border-top: 1px solid silver">
-                <a href="login.aspx">Log In</a>&nbsp&nbsp<a href="register.aspx">Register</a>
-            </div>
-            <br style="clear: both" />
-            <div style="width: 490px; float: left; text-align: left; height: 160px; border: 1px solid silver; border-left: 0px; border-right: 0px; padding-left: 10px">
-                <h3>Highest Scored Courses</h3>
-                <div style="width: 350px; float: left"><a id="hsc1" href="course.aspx?id=ec500">EC500 XXXXXX</a></div>
-                <div style="width: 140px; float: left; text-align: center">
-                    <asp:Label runat="server" ID="hss1">5.0</asp:Label>
+            <div style="width: 1000px; border-top: 1px solid silver">
+                <div id="navigate" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+                    <a href="Default.aspx">Home</a>&nbsp&nbsp<a href="courselist.aspx">Course</a>
                 </div>
-                <br style="clear: both" />
-                <div style="width: 350px; float: left"><a id="hsc2" href="course.aspx?id=ec500">EC501 XXXXXX</a></div>
-                <div style="width: 140px; float: left; text-align: center">
-                    <asp:Label runat="server" ID="hss2"> 4.9</asp:Label>
+                <div id="account" style="width: 490px; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+                    <a href="login.aspx">Log In</a>&nbsp&nbsp<a href="register.aspx">Register</a>
                 </div>
-                <br style="clear: both" />
-                <div style="width: 350px; float: left"><a id="hsc3" href="course.aspx?id=ec500">EC502 XXXXXX</a></div>
-                <div style="width: 140px; float: left; text-align: center">
-                    <asp:Label runat="server" ID="hss3"> 4.8</asp:Label>
-                </div>
-                <br style="clear: both" />
-                <div style="width: 350px; float: left"><a id="hsc4" href="course.aspx?id=ec500">EC503 XXXXXX</a></div>
-                <div style="width: 140px; float: left; text-align: center">
-                    <asp:Label runat="server" ID="hss4"> 4.7</asp:Label>
-                </div>
-                <br style="clear: both" />
-            </div>
-            <div style="width: 489px; float: right; text-align: left; height: 160px; border: 1px solid silver; border-right: 0px; padding-left: 10px">
-                <h3>Most Commented Courses</h3>
-                <div style="width: 349px; float: left"><a id="mcc1" href="course.aspx?id=ec500">EC500 XXXXXX</a></div>
-                <div style="width: 140px; float: left; text-align: center">
-                    <asp:Label runat="server" ID="mcs1">100</asp:Label>
-                </div>
-                <br style="clear: both" />
-                <div style="width: 349px; float: left"><a id="mcc2" href="course.aspx?id=ec500">EC501 XXXXXX</a></div>
-                <div style="width: 140px; float: left; text-align: center">
-                    <asp:Label runat="server" ID="mcs2">99</asp:Label>
-                </div>
-                <br style="clear: both" />
-                <div style="width: 349px; float: left"><a id="mcc3" href="course.aspx?id=ec500">EC502 XXXXXX</a></div>
-                <div style="width: 140px; float: left; text-align: center">
-                    <asp:Label runat="server" ID="mcs3">98</asp:Label>
-                </div>
-                <br style="clear: both" />
-                <div style="width: 349px; float: left"><a id="mcc4" href="course.aspx?id=ec500">EC503 XXXXXX</a></div>
-                <div style="width: 140px; float: left; text-align: center">
-                    <asp:Label runat="server" ID="mcs4">97</asp:Label>
-                </div>
-                <br style="clear: both" />
             </div>
             <br style="clear: both" />
+            <div style="width: 1000px; border-top: 1px solid silver; border-bottom: 1px solid silver;">
+                <div style="width: 485px; float: left; text-align: left; height: 160px; border-right: 1px solid silver; padding-left: 10px">
+                    <h3>Highest Scored Courses</h3>
+                    <div style="width: 385px; float: left"><a id="hsc1" href="course.aspx?id=ec500">EC500 XXXXXX</a></div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="hss1">5.0</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left"><a id="hsc2" href="course.aspx?id=ec500">EC501 XXXXXX</a></div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="hss2"> 4.9</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left"><a id="hsc3" href="course.aspx?id=ec500">EC502 XXXXXX</a></div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="hss3"> 4.8</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left"><a id="hsc4" href="course.aspx?id=ec500">EC503 XXXXXX</a></div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="hss4"> 4.7</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                </div>
+                <div style="width: 485px; float: right; text-align: left; height: 160px; padding-left: 10px">
+                    <h3>Most Commented Courses</h3>
+                    <div style="width: 385px; float: left"><a id="mcc1" href="course.aspx?id=ec500">EC500 XXXXXX</a></div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="mcs1">100</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left"><a id="mcc2" href="course.aspx?id=ec500">EC501 XXXXXX</a></div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="mcs2">99</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left"><a id="mcc3" href="course.aspx?id=ec500">EC502 XXXXXX</a></div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="mcs3">98</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left"><a id="mcc4" href="course.aspx?id=ec500">EC503 XXXXXX</a></div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="mcs4">97</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                </div>
+                <br style="clear: both" />
+            </div>
             <div style="padding-left: 10px; padding-right: 10px; height: 800px">
                 <h3>Recent Reviews</h3>
                 <div>
