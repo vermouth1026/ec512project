@@ -88,49 +88,98 @@
             </div>
             <div style="padding-left: 10px; padding-right: 10px; height: 800px">
                 <h3>Recent Reviews</h3>
-                <div>
-                    <div id="profile1" style="width: 25%; float: left; height: 200px">
-                    </div>
-                    <div style="width: 70%; float: right; height: 200px">
-                        <div>
-                            <div id="rcc1" style="float: left; width: 45%">
+                <div style="padding-left:10px;padding-right:10px">
+                    <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 10px 10px 10px 10px; background-color:#FFFFBF">
+                        <div id="profile1" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 75%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px; padding-top: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc1" NavigateUrl="course.aspx?id=ec501" Text="EC501 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: center; padding-top: 10px">
+                                    <asp:Label runat="server" ID="rcs1_0">5.0</asp:Label>
+                                </div>
                             </div>
-                            <div id="rcs1_0" style="float: right; width: 45%; text-align: right">
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment1">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
                             </div>
                         </div>
-                        <div id="comment1">
+                    </div>
+                    <br />
+                    <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 10px 10px 10px 10px; background-color:#FFFFBF">
+                        <div id="profile2" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 75%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px; padding-top: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc2" NavigateUrl="course.aspx?id=ec502" Text="EC502 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: center; padding-top: 10px">
+                                    <asp:Label runat="server" ID="rcs2_0">5.0</asp:Label>
+                                </div>
+                            </div>
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment2">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
+                            </div>
                         </div>
                     </div>
+                    <br />
+                    <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 10px 10px 10px 10px; background-color:#FFFFBF">
+                        <div id="profile3" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 75%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px; padding-top: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc3" NavigateUrl="course.aspx?id=ec503" Text="EC503 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: center; padding-top: 10px">
+                                    <asp:Label runat="server" ID="rcs3_0">5.0</asp:Label>
+                                </div>
+                            </div>
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment3">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 10px 10px 10px 10px; background-color:#FFFFBF">
+                        <div id="profile4" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 75%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px; padding-top: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc4" NavigateUrl="course.aspx?id=ec504" Text="EC504 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: center; padding-top: 10px">
+                                    <asp:Label runat="server" ID="rcs4_0">5.0</asp:Label>
+                                </div>
+                            </div>
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment4">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 10px 10px 10px 10px; background-color:#FFFFBF">
+                        <div id="profile5" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 75%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px; padding-top: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc5" NavigateUrl="course.aspx?id=ec505" Text="EC505 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: center; padding-top: 10px">
+                                    <asp:Label runat="server" ID="rcs5_0">5.0</asp:Label>
+                                </div>
+                            </div>
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment5">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <br style="clear: both" />
                 </div>
-                <div>
-                    <div id="profile2" style="width: 25%; float: left; height: 200px">
-                    </div>
-                    <div style="width: 70%; float: right; height: 200px">
-                        <div>
-                            <div id="rcc2" style="float: left; width: 45%">
-                            </div>
-                            <div id="rcs2_0" style="float: right; width: 45%; text-align: right">
-                            </div>
-                        </div>
-                        <div id="comment2">
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div id="profile3" style="width: 25%; float: left; height: 200px">
-                    </div>
-                    <div style="width: 70%; float: right; height: 200px">
-                        <div>
-                            <div id="rcc3" style="float: left; width: 45%">
-                            </div>
-                            <div id="rcs3_0" style="float: right; width: 45%; text-align: right">
-                            </div>
-                        </div>
-                        <div id="comment3">
-                        </div>
-                    </div>
-                </div>
-                <br style="clear: both" />
             </div>
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [COURSE]"></asp:SqlDataSource>
