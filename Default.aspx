@@ -107,7 +107,7 @@
                         </div>
                     </div>
                     <br />
-                    <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 10px 10px 10px 10px; background-color:#FFFFBF">
+                    <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 10px 10px 10px 10px; background-color:cornsilk">
                         <div id="profile2" style="width: 20%; float: left; height: 200px">
                         </div>
                         <div style="width: 75%; float: right; height: 200px">
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                     <br />
-                    <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 10px 10px 10px 10px; background-color:#FFFFBF">
+                    <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 10px 10px 10px 10px; background-color:cornsilk">
                         <div id="profile4" style="width: 20%; float: left; height: 200px">
                         </div>
                         <div style="width: 75%; float: right; height: 200px">
