@@ -53,7 +53,7 @@
                     </div>
                     <br style="clear: both" />
                 </div>
-                <div style="width: 485px; float: right; text-align: left; height: 160px; padding-left: 10px">
+                <div style="width: 495px; float: right; text-align: left; height: 160px; padding-left: 0px">
                     <h3>Most Commented Courses</h3>
                     <div style="width: 385px; float: left">
                         <asp:HyperLink runat="server" ID="mcc1" NavigateUrl="course.aspx?id=ec500" Text="EC500 XXXXXX" />
