@@ -25,28 +25,28 @@
                 <div style="width: 485px; float: left; text-align: left; height: 160px; border-right: 1px solid silver; padding-left: 10px">
                     <h3>Highest Scored Courses</h3>
                     <div style="width: 385px; float: left">
-                        <asp:HyperLink runat="server" ID="hsc1" href="course.aspx?id=ec500">EC500 XXXXXX</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="hsc1" NavigateUrl="course.aspx?id=ec500" Text="EC500 XXXXXX" />
                     </div>
                     <div style="width: 100px; float: left; text-align: center">
                         <asp:Label runat="server" ID="hss1">5.0</asp:Label>
                     </div>
                     <br style="clear: both" />
                     <div style="width: 385px; float: left">
-                        <asp:HyperLink runat="server" ID="hsc2" href="course.aspx?id=ec500">EC501 XXXXXX</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="hsc2" NavigateUrl="course.aspx?id=ec501" Text="EC501 XXXXXX" />
                     </div>
                     <div style="width: 100px; float: left; text-align: center">
                         <asp:Label runat="server" ID="hss2"> 4.9</asp:Label>
                     </div>
                     <br style="clear: both" />
                     <div style="width: 385px; float: left">
-                        <asp:HyperLink runat="server" ID="hsc3" href="course.aspx?id=ec500">EC503 XXXXXX</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="hsc3" NavigateUrl="course.aspx?id=ec502" Text="EC502 XXXXXX" />
                     </div>
                     <div style="width: 100px; float: left; text-align: center">
                         <asp:Label runat="server" ID="hss3"> 4.8</asp:Label>
                     </div>
                     <br style="clear: both" />
                     <div style="width: 385px; float: left">
-                        <asp:HyperLink runat="server" ID="hsc4" href="course.aspx?id=ec500">EC504 XXXXXX</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="hsc4" NavigateUrl="course.aspx?id=ec503" Text="EC503 XXXXXX" />
                     </div>
                     <div style="width: 100px; float: left; text-align: center">
                         <asp:Label runat="server" ID="hss4"> 4.7</asp:Label>
@@ -56,28 +56,28 @@
                 <div style="width: 485px; float: right; text-align: left; height: 160px; padding-left: 10px">
                     <h3>Most Commented Courses</h3>
                     <div style="width: 385px; float: left">
-                        <asp:HyperLink runat="server" ID="mcc1" href="course.aspx?id=ec500">EC500 XXXXXX</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="mcc1" NavigateUrl="course.aspx?id=ec500" Text="EC500 XXXXXX" />
                     </div>
                     <div style="width: 100px; float: left; text-align: center">
                         <asp:Label runat="server" ID="mcs1">100</asp:Label>
                     </div>
                     <br style="clear: both" />
                     <div style="width: 385px; float: left">
-                        <asp:HyperLink runat="server" ID="mcc2" href="course.aspx?id=ec500">EC501 XXXXXX</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="mcc2" NavigateUrl="course.aspx?id=ec501" Text="EC501 XXXXXX" />
                     </div>
                     <div style="width: 100px; float: left; text-align: center">
                         <asp:Label runat="server" ID="mcs2">99</asp:Label>
                     </div>
                     <br style="clear: both" />
                     <div style="width: 385px; float: left">
-                        <asp:HyperLink runat="server" ID="mcc3" href="course.aspx?id=ec500">EC502 XXXXXX</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="mcc3" NavigateUrl="course.aspx?id=ec502" Text="EC502 XXXXXX" />
                     </div>
                     <div style="width: 100px; float: left; text-align: center">
                         <asp:Label runat="server" ID="mcs3">98</asp:Label>
                     </div>
                     <br style="clear: both" />
                     <div style="width: 385px; float: left">
-                        <asp:HyperLink runat="server" ID="mcc4" href="course.aspx?id=ec500">EC503 XXXXXX</asp:HyperLink>
+                        <asp:HyperLink runat="server" ID="mcc4" NavigateUrl="course.aspx?id=ec503" Text="EC503 XXXXXX" />
                     </div>
                     <div style="width: 100px; float: left; text-align: center">
                         <asp:Label runat="server" ID="mcs4">97</asp:Label>
