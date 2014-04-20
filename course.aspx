@@ -146,12 +146,13 @@
             <div id="myReview" style="padding: 0px 20px 30px 20px; border-top: 1px solid silver">
                 <h3>My Review</h3>
                 <div id="myComment" style="padding-left: 10px; padding-right: 10px">
-                    <div style="border: 1px solid black; height: 360px; padding: 30px 20px 20px 30px; background-color: #D8E4FA">
+                    <div style="border: 1px solid black; height: 380px; padding: 30px 20px 20px 30px; background-color: #D8E4FA">
                         <div id="profile0" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
-                        <div style="width: 78%; float: right; height: 340px">
+                        <div style="width: 78%; float: right; height: 360px">
                             <asp:TextBox ID="review" runat="server" Height="150px" Width="99%" TextMode="MultiLine"></asp:TextBox>
-                            <br /><br />
+                            <br />
+                            <br />
                             <div>
                                 <label style="float: left; font-size: x-large">Overall:</label>
                                 <div style="float: right">
@@ -167,7 +168,8 @@
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
-                            <br /><br />
+                            <br />
+                            <br />
                             <div>
                                 <label style="float: left; font-size: x-large">Professor:</label>
                                 <div style="float: right">
@@ -183,7 +185,8 @@
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
-                            <br /><br />
+                            <br />
+                            <br />
                             <div>
                                 <label style="float: left; font-size: x-large">Contents:</label>
                                 <div style="float: right">
@@ -199,7 +202,8 @@
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
-                            <br /><br />
+                            <br />
+                            <br />
                             <div>
                                 <label style="float: left; font-size: x-large">Difficulty:</label>
                                 <div style="float: right">
@@ -214,6 +218,11 @@
                                 <asp:RadioButton runat="server" GroupName="rate3" Text="5" Font-Size="X-Large"></asp:RadioButton>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
+                            </div>
+                            <br /><br /><br />
+                            <div>
+                                <label id="errmsg" style="color: red"></label>
+                                <button type="submit" id="submit" style="float:right">Submit</button>
                             </div>
                         </div>
                     </div>
