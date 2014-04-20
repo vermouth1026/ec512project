@@ -143,79 +143,76 @@
                 </div>
                 <br />
             </div>
-            <div id="myReview" style="padding: 0px 20px 30px 20px; border-top: 1px solid silver">
+            <div runat="server" id="myReview" style="padding: 0px 20px 30px 20px; border-top: 1px solid silver">
                 <h3>My Review</h3>
                 <div id="myComment" style="padding-left: 10px; padding-right: 10px">
-                    <div style="border: 1px solid black; height: 380px; padding: 30px 20px 20px 30px; background-color: #D8E4FA">
+                    <div style="border: 1px solid black; height: 330px; padding: 30px 20px 20px 30px; background-color: #D8E4FA">
                         <div id="profile0" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
-                        <div style="width: 78%; float: right; height: 360px">
+                        <div style="width: 78%; float: right; height: 310px">
                             <textarea id="review" name="review" style="width: 99%; height: 150px;"></textarea>
                             <br />
                             <br />
                             <div>
-                                <label style="float: left; font-size: x-large">Overall:</label>
+                                <label style="float: left">Overall:</label>
                                 <div style="float: right">
-                                    <input type="radio" name="rate0" value="1" /><label style="font-size: x-large">1</label>
+                                    <input type="radio" name="rate0" value="1" /><label>1</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate0" value="2" /><label style="font-size: x-large">2</label>
+                                <input type="radio" name="rate0" value="2" /><label>2</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate0" value="3" /><label style="font-size: x-large">3</label>
+                                <input type="radio" name="rate0" value="3" /><label>3</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate0" value="4" /><label style="font-size: x-large">4</label>
+                                <input type="radio" name="rate0" value="4" /><label>4</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate0" value="5" /><label style="font-size: x-large">5</label>
+                                <input type="radio" name="rate0" value="5" /><label>5</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
                             <br />
-                            <br />
                             <div>
-                                <label style="float: left; font-size: x-large">Professor:</label>
+                                <label style="float: left">Professor:</label>
                                 <div style="float: right">
-                                    <input type="radio" name="rate1" value="1" /><label style="font-size: x-large">1</label>
+                                    <input type="radio" name="rate1" value="1" /><label>1</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate1" value="2" /><label style="font-size: x-large">2</label>
+                                <input type="radio" name="rate1" value="2" /><label>2</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate1" value="3" /><label style="font-size: x-large">3</label>
+                                <input type="radio" name="rate1" value="3" /><label>3</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate1" value="4" /><label style="font-size: x-large">4</label>
+                                <input type="radio" name="rate1" value="4" /><label>4</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate1" value="5" /><label style="font-size: x-large">5</label>
+                                <input type="radio" name="rate1" value="5" /><label>5</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
                             <br />
-                            <br />
                             <div>
-                                <label style="float: left; font-size: x-large">Contents:</label>
+                                <label style="float: left">Contents:</label>
                                 <div style="float: right">
-                                    <input type="radio" name="rate2" value="1" /><label style="font-size: x-large">1</label>
+                                    <input type="radio" name="rate2" value="1" /><label>1</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate2" value="2" /><label style="font-size: x-large">2</label>
+                                <input type="radio" name="rate2" value="2" /><label>2</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate2" value="3" /><label style="font-size: x-large">3</label>
+                                <input type="radio" name="rate2" value="3" /><label>3</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate2" value="4" /><label style="font-size: x-large">4</label>
+                                <input type="radio" name="rate2" value="4" /><label>4</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate2" value="5" /><label style="font-size: x-large">5</label>
+                                <input type="radio" name="rate2" value="5" /><label>5</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
                             <br />
-                            <br />
                             <div>
-                                <label style="float: left; font-size: x-large">Difficulty:</label>
+                                <label style="float: left">Difficulty:</label>
                                 <div style="float: right">
-                                    <input type="radio" name="rate3" value="1" /><label style="font-size: x-large">1</label>
+                                    <input type="radio" name="rate3" value="1" /><label>1</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate3" value="2" /><label style="font-size: x-large">2</label>
+                                <input type="radio" name="rate3" value="2" /><label>2</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate3" value="3" /><label style="font-size: x-large">3</label>
+                                <input type="radio" name="rate3" value="3" /><label>3</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate3" value="4" /><label style="font-size: x-large">4</label>
+                                <input type="radio" name="rate3" value="4" /><label>4</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <input type="radio" name="rate3" value="5" /><label style="font-size: x-large">5</label>
+                                <input type="radio" name="rate3" value="5" /><label>5</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
@@ -288,7 +285,6 @@
                 return;
             }
 
-            document.getElementById("myReview").style.display = "none";
             document.getElementById("form1").submit();
         }
     </script>
