@@ -22,7 +22,9 @@
             </div>
             <br style="clear: both" />
             <div>
-                <asp:Label runat="server" ID="num" Font-Size="X-Large">EC512</asp:Label>
+                <div>
+                    <asp:Label runat="server" ID="num" Font-Size="X-Large">EC512</asp:Label>
+                </div>
             </div>
         </div>
     </form>
