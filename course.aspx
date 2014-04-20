@@ -72,14 +72,14 @@
                         </div>
                         <div style="float: left; width: 288px; height: 88px; background-color: seagreen; border: 1px solid white; text-align: center">
                             <br />
-                            <asp:Label ID="score3" runat="server" Font-Size="24" ForeColor="white" Width="298px">Hardness: 5.0</asp:Label>
+                            <asp:Label ID="score3" runat="server" Font-Size="24" ForeColor="white" Width="298px">Difficulty: 5.0</asp:Label>
                         </div>
                     </div>
                 </div>
                 <br style="clear: both" />
                 <div style="width: 100%; padding-top: 25px; padding-bottom: 25px" id="description">Description goes here.</div>
             </div>
-            <div id="reviews" style="padding-left: 20px; padding-right: 20px; height: 1200px">
+            <div id="reviews" style="padding-left: 20px; padding-right: 20px; height: 800px">
                 <h3>Past Reviews</h3>
                 <div style="padding-left: 10px; padding-right: 10px">
                     <div style="border: 1px solid black; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: #FFFFBF">
@@ -142,9 +142,81 @@
                     <button type="button" id="next" onclick="loadNextPage()">Next Page</button>
                 </div>
                 <br />
-                <h3>My Review:</h3>
-                <div>
-                    Haha
+            </div>
+            <div id="myReview" style="padding: 0px 20px 30px 20px; border-top: 1px solid silver">
+                <h3>My Review</h3>
+                <div id="myComment" style="padding-left: 10px; padding-right: 10px">
+                    <div style="border: 1px solid black; height: 360px; padding: 30px 20px 20px 30px; background-color: #D8E4FA">
+                        <div id="profile0" runat="server" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 78%; float: right; height: 340px">
+                            <asp:TextBox ID="review" runat="server" Height="150px" Width="99%" TextMode="MultiLine"></asp:TextBox>
+                            <br /><br />
+                            <div>
+                                <label style="float: left; font-size: x-large">Overall:</label>
+                                <div style="float: right">
+                                    <asp:RadioButton runat="server" GroupName="rate0" Text="1" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate0" Text="2" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate0" Text="3" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate0" Text="4" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate0" Text="5" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                </div>
+                            </div>
+                            <br /><br />
+                            <div>
+                                <label style="float: left; font-size: x-large">Professor:</label>
+                                <div style="float: right">
+                                    <asp:RadioButton runat="server" GroupName="rate1" Text="1" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate1" Text="2" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate1" Text="3" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate1" Text="4" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate1" Text="5" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                </div>
+                            </div>
+                            <br /><br />
+                            <div>
+                                <label style="float: left; font-size: x-large">Contents:</label>
+                                <div style="float: right">
+                                    <asp:RadioButton runat="server" GroupName="rate2" Text="1" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate2" Text="2" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate2" Text="3" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate2" Text="4" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate2" Text="5" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                </div>
+                            </div>
+                            <br /><br />
+                            <div>
+                                <label style="float: left; font-size: x-large">Difficulty:</label>
+                                <div style="float: right">
+                                    <asp:RadioButton runat="server" GroupName="rate3" Text="1" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate3" Text="2" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate3" Text="3" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate3" Text="4" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <asp:RadioButton runat="server" GroupName="rate3" Text="5" Font-Size="X-Large"></asp:RadioButton>
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
