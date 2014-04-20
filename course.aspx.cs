@@ -53,7 +53,7 @@ public partial class course : System.Web.UI.Page
             score0.Text = score_o;
             score1.Text = score_p;
             score2.Text = score_c;
-            score2.Text = score_h;
+            score3.Text = score_h;
         }
         
         conn.Close();
