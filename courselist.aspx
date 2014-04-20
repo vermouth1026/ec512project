@@ -10,7 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="width: 1000px; border: 1px solid silver; background-color: white">
+        <div style="width: 1000px; border: 1px solid silver; background-color: white; overflow: hidden">
             <div id="logo" runat="server" style="width: 1000px; height: 120px">
             </div>
             <div style="width: 1000px; border-top: 1px solid silver">
@@ -22,8 +22,8 @@
                 </div>
             </div>
             <br style="clear: both" />
-            <div style="width: 1000px; border-top: 1px solid silver; border-bottom: 1px solid silver;">
-                <div style="width: 485px; float: left; text-align: center; height: 1400px; border-right: 1px solid silver; padding-left: 10px">
+            <div style="width: 1000px; border-top: 1px solid silver; overflow: hidden">
+                <div style="width: 485px; float: left; text-align: center; border-right: 1px solid silver; padding-left: 10px; overflow: hidden">
                     <h3>Computer Communications/Networks</h3>
                     <div style="width: 420px; border: 1px solid silver; background-color: floralwhite">
                         <div style="width: 400px">
@@ -189,8 +189,9 @@
                             <a href="course.aspx?id=ec582">EC782 XXXX XXXX XXXX</a>
                         </div>
                     </div>
+                    <br />
                 </div>
-                <div style="width: 495px; float: right; text-align: center; height: 1400px; padding-left: 0px">
+                <div style="width: 495px; float: right; text-align: center; padding-left: 0px; overflow: hidden">
                     <h3>Hardware</h3>
                     <div style="width: 420px; border: 1px solid silver; background-color: floralwhite">
                         <div style="width: 400px">
