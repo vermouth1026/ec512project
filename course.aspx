@@ -81,7 +81,7 @@
             </div>
             <div id="reviews" style="padding-left: 20px; padding-right: 20px; height: 800px">
                 <h3>Past Reviews</h3>
-                <div style="padding-left: 10px; padding-right: 10px">
+                <div id="psReviews" style="padding-left: 10px; padding-right: 10px">
                     <div style="border: 1px solid black; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: #FFFFBF">
                         <div id="profile1" runat="server" style="width: 15%; float: left; height: 150px">
                         </div>
