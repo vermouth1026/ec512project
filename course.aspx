@@ -21,9 +21,22 @@
                 </div>
             </div>
             <br style="clear: both" />
-            <div style="width: 1000px; border-top: 1px solid silver; border-bottom: 1px solid silver;">
-                <div>
+            <div style="width: 940px; border-top: 1px solid silver; border-bottom: 1px solid silver; height: 2000px; padding: 30px 30px 30px 30px">
+                <div style="width: 45%; float: left; padding: 10px 10px 10px 10px; border: 1px solid black">
                     <asp:Label runat="server" ID="num" Font-Size="X-Large">EC512</asp:Label>
+                    <br />
+                    <br />
+                    <br />
+                    <asp:Label runat="server" ID="name" Font-Size="Large">Name: Enterprise Client-Server Software Systems Design</asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label runat="server" ID="prof" Font-Size="Large">Professor: Thomas P. Skinner</asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label runat="server" ID="spec" Font-Size="Large">Specialization: Software</asp:Label>
+                </div>
+                <div style="width: 45%; float: left; padding: 10px 10px 10px 10px">
+                    <asp:Label runat="server" ID="Score0" Font-Size="64">5.0</asp:Label>
                 </div>
             </div>
         </div>
