@@ -12,15 +12,24 @@
         <div style="width: 1000px; border: 1px solid silver; background-color: white">
             <div id="logo" runat="server" style="width: 1000px; height: 120px">
             </div>
-            <div style="width: 1000px; border-top: 1px solid silver">
-                <div id="navigate" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+            <div id="navi1" style="width: 1000px; border-top: 1px solid silver; overflow: hidden">
+                <div id="navigate1" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
                     <a href="Default.aspx">Home</a>&nbsp&nbsp<a href="courselist.aspx">Course</a>
                 </div>
-                <div id="account" style="width: 490px; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
-                    <a href="login.aspx">Log In</a>&nbsp&nbsp<a href="register.aspx">Register</a>
+                <div id="account1" style="width: 490px; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+                    <a href="login.aspx">Log in</a>&nbsp&nbsp<a href="register.aspx">Register</a>
                 </div>
+                <br style="clear: both" />
             </div>
-            <br style="clear: both" />
+            <div id="navi2" style="width: 1000px; border-top: 1px solid silver; display: normal; overflow: hidden">
+                <div id="navigate2" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+                    <a href="Default.aspx">Home</a>&nbsp&nbsp<a href="courselist.aspx">Course</a>&nbsp&nbsp<asp:HyperLink ID="mypage" runat="server" Text="My page" NavigateUrl="user.aspx"></asp:HyperLink>
+                </div>
+                <div id="account2" style="width: 490px; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+                    <asp:Label ID="greeting" runat="server" Text="Hello, Shuibi!"></asp:Label>&nbsp&nbsp<asp:LinkButton ID="logout" runat="server" Text="Log out" OnClick="logout_Click"></asp:LinkButton>
+                </div>
+                <br style="clear: both" />
+            </div>
             <div style="width: 940px; border-top: 1px solid silver; border-bottom: 1px solid silver; padding: 30px 30px 30px 30px">
                 <div style="width: 200px; height: 200px; float: left; padding-right: 20px">
                     <asp:Image runat="server" ID="myimg" Width="200px" Height="200px" ImageUrl="image\default.png" />

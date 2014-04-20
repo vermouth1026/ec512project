@@ -184,4 +184,8 @@ public partial class _Default : System.Web.UI.Page
         comment5.Text = text[4];     
         
     }
+    protected void logout_Click(object sender, EventArgs e)
+    {
+
+    }
 }
