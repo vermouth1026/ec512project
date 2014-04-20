@@ -110,7 +110,7 @@
                     <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color:cornsilk">
                         <div id="profile2" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
-                        <div style="width: 75%; float: right; height: 200px">
+                        <div style="width: 78%; float: right; height: 200px">
                             <div style="height: 35px">
                                 <div style="float: left; width: 45%; padding-left: 10px">
                                     <asp:HyperLink runat="server" ID="rcc2" NavigateUrl="course.aspx?id=ec502" Text="EC502 XXXXXX" />
@@ -128,7 +128,7 @@
                     <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color:#FFFFBF">
                         <div id="profile3" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
-                        <div style="width: 75%; float: right; height: 200px">
+                        <div style="width: 78%; float: right; height: 200px">
                             <div style="height: 35px">
                                 <div style="float: left; width: 45%; padding-left: 10px">
                                     <asp:HyperLink runat="server" ID="rcc3" NavigateUrl="course.aspx?id=ec503" Text="EC503 XXXXXX" />
@@ -146,7 +146,7 @@
                     <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color:cornsilk">
                         <div id="profile4" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
-                        <div style="width: 75%; float: right; height: 200px">
+                        <div style="width: 78%; float: right; height: 200px">
                             <div style="height: 35px">
                                 <div style="float: left; width: 45%; padding-left: 10px">
                                     <asp:HyperLink runat="server" ID="rcc4" NavigateUrl="course.aspx?id=ec504" Text="EC504 XXXXXX" />
@@ -164,7 +164,7 @@
                     <div style="border: 1px solid black; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color:#FFFFBF">
                         <div id="profile5" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
-                        <div style="width: 75%; float: right; height: 200px">
+                        <div style="width: 78%; float: right; height: 200px">
                             <div style="height: 35px">
                                 <div style="float: left; width: 45%; padding-left: 10px">
                                     <asp:HyperLink runat="server" ID="rcc5" NavigateUrl="course.aspx?id=ec505" Text="EC505 XXXXXX" />
