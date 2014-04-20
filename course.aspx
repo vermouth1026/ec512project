@@ -3,24 +3,24 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title></title>
     <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
     <script>
         function loadNextPage() {
             var xmlhttp;
-            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            if (window.XMLHttpRequest) {
                 xmlhttp = new XMLHttpRequest();
             }
-            else {// code for IE6, IE5
+            else {
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById("profile1").innerHTML = xmlhttp.responseText;
+                    document.getElementById("profile1").innerHTML = "<a href=\"Default.aspx\">Home</a>";//xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET", "ajax_info.txt", true);
+            xmlhttp.open("GET", "Default.aspx", true);
             xmlhttp.send();
         }
     </script>
@@ -136,9 +136,10 @@
                         </div>
                     </div>
                     <br style="clear: both" />
-                    <button type="button" id="next" onclick="loadNextPage">Next Page</button>
+                    <button type="button" id="next" onclick="loadNextPage()">Next Page</button>
                 </div>
             </div>
+        </div>
     </form>
 </body>
 </html>
