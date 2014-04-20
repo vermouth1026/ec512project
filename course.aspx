@@ -21,7 +21,7 @@
                 </div>
             </div>
             <br style="clear: both" />
-            <div>
+            <div style="width: 1000px; border-top: 1px solid silver; border-bottom: 1px solid silver;">
                 <div>
                     <asp:Label runat="server" ID="num" Font-Size="X-Large">EC512</asp:Label>
                 </div>
