@@ -41,17 +41,17 @@
             <br style="clear: both" />
             <div style="width: 940px; border-top: 1px solid silver; border-bottom: 1px solid silver; height: 350px; padding: 30px 30px 30px 30px">
                 <div style="width: 416px; height: 246px; float: left; padding: 10px 10px 10px 10px; border: 2px solid black">
-                    <asp:Label runat="server" ID="Label1" Font-Size="XX-Large">EC512</asp:Label>
+                    <asp:Label runat="server" ID="num" Font-Size="XX-Large">EC512</asp:Label>
                     <br />
                     <br />
                     <br />
-                    <asp:Label runat="server" ID="Label2" Font-Size="Large">Name: Enterprise Client-Server Software Systems Design</asp:Label>
+                    <asp:Label runat="server" ID="name" Font-Size="Large">Name: Enterprise Client-Server Software Systems Design</asp:Label>
                     <br />
                     <br />
-                    <asp:Label runat="server" ID="Label3" Font-Size="Large">Professor: Thomas P. Skinner</asp:Label>
+                    <asp:Label runat="server" ID="prof" Font-Size="Large">Professor: Thomas P. Skinner</asp:Label>
                     <br />
                     <br />
-                    <asp:Label runat="server" ID="Label4" Font-Size="Large">Specialization: Software</asp:Label>
+                    <asp:Label runat="server" ID="spec" Font-Size="Large">Specialization: Software</asp:Label>
                 </div>
                 <div style="width: 480px; height: 270px; float: right">
                     <div style="float: left; width: 178px; height: 268px; background-color: tomato; border: 1px solid white; text-align: center">
@@ -79,7 +79,7 @@
                 <br style="clear: both" />
                 <div style="width: 100%; padding-top: 25px; padding-bottom: 25px" id="description">Description goes here.</div>
             </div>
-            <div id="reviews" style="padding-left: 20px; padding-right: 20px; height: 1450px">
+            <div id="reviews" style="padding-left: 20px; padding-right: 20px; height: 1200px">
                 <h3>Past Reviews</h3>
                 <div style="padding-left: 10px; padding-right: 10px">
                     <div style="border: 1px solid black; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: #FFFFBF">
@@ -136,7 +136,15 @@
                         </div>
                     </div>
                     <br style="clear: both" />
+
+                </div>
+                <div style="padding-left: 10px">
                     <button type="button" id="next" onclick="loadNextPage()">Next Page</button>
+                </div>
+                <br />
+                <h3>My Review:</h3>
+                <div>
+                    Haha
                 </div>
             </div>
         </div>
