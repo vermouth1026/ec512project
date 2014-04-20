@@ -102,9 +102,9 @@ public partial class _Default : System.Web.UI.Page
         int dis_num = 3;
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select * from RATING order by Datetime desc";
-        SqlCommand cmd = new SqlCommand(cmdstr, conn);
-        SqlDataReader rdr = cmd.ExecuteReader();
+        //string cmdstr = "select * from RATING a Inner join PERSON on a.User_Id=USER.Id"; 
+        //SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        //SqlDataReader rdr = cmd.ExecuteReader();
         int i = 0;
         string[] courseCode = new string[dis_num];
         string[] courseName = new string[dis_num];
@@ -112,16 +112,41 @@ public partial class _Default : System.Web.UI.Page
         string[] score = new string[dis_num];
         string[] username = new string[dis_num];
         string[] email = new string[dis_num];
-        object[] profile = new object[dis_num];
-        while (rdr.Read() && i < dis_num)
-        {
-            courseCode[i] = (string)rdr["Code"];
-            courseName[i] = (string)rdr["Course_Name"];
-            text[i] = (string)rdr["Comments"];
-            score[i] = (string)rdr["Score_Overall"];
-            username[i] = (string)rdr["User_name"];
-            email[i] = (string)rdr["Email"];
-        }
+        string[] profile = new string[dis_num];
+
+        
+
+
+
+            /*while (rdr.Read() && i < dis_num)
+            {
+                courseCode[i] = (string)rdr["Code"];
+                courseName[i] = (string)rdr["Course_Name"];
+                text[i] = (string)rdr["Comments"];
+                score[i] = (string)rdr["Score_Overall"];
+                username[i] = (string)rdr["User_name"];
+                email[i] = (string)rdr["Email"];
+            }*/
+
+
+            courseCode[0] = "EC504";
+            courseName[0] = "Advanced Data Structure";
+            text[0] = "This is EC504";
+            score[0] = "5.0";
+            username[0] = "Haitian Jin";
+            email[0] = "Elinkin";
+
+          string img = "<img src=\"/image/default.png\"  alt=\"profile1\" width = 120 />";
+          string name = username[0];
+          string addr = email[0];
+          string info = img + "</br>" + name + "</br>" + addr + "@bu.edu";  
+          //logo.InnerHtml = info;
+          profile1.InnerHtml = info;
+          //conn.Close();
+
+
+
+    }
 
 
 
