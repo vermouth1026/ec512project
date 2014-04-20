@@ -17,10 +17,10 @@
             }
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById("profile1").innerHTML = "<a href=\"Default.aspx\">Home</a>";//xmlhttp.responseText;
+                    document.getElementById("myComment").innerHTML = xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET", "Default.aspx", true);
+            xmlhttp.open("GET", "reviews.aspx", true);
             xmlhttp.send();
         }
     </script>

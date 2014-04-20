@@ -94,8 +94,8 @@
                 </div>
             </div>
             <div style="height: 200px; padding: 0px 30px 30px 30px">
-                <h3>My Comments</h3>
-                <div id="myComments">
+                <h3>Comments</h3>
+                <div id="comments">
                 </div>
             </div>
         </div>
