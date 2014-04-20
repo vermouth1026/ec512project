@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -99,52 +99,58 @@ public partial class _Default : System.Web.UI.Page
 
     private void Load_Lower()
     {
-        int dis_num = 3;
+        int dis_num = 4;
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        //string cmdstr = "select * from RATING a Inner join PERSON on a.User_Id=USER.Id"; 
-        //SqlCommand cmd = new SqlCommand(cmdstr, conn);
-        //SqlDataReader rdr = cmd.ExecuteReader();
+        string cmdstr = "select top 5 c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) order by c.Datetime"; 
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
         int i = 0;
         string[] courseCode = new string[dis_num];
         string[] courseName = new string[dis_num];
         string[] text = new string[dis_num];
         string[] score = new string[dis_num];
-        string[] username = new string[dis_num];
+        string[] student_name = new string[dis_num];
         string[] email = new string[dis_num];
         string[] profile = new string[dis_num];
+        string[] student_id = new string[dis_num];
+        string[] name_link = new string[dis_num];
+        string[] course_link = new string[dis_num];
+        string[] img_pos = new string[dis_num];
+        string[] img = new string[dis_num];
+        string[] info = new string[dis_num];
+      
+        while (rdr.Read() && i < dis_num)
+        {
+            courseCode[i] = (string)rdr["Code"];
+            courseName[i] = (string)rdr["Course_Name"];
+            text[i] = (string)rdr["Comments"];
+            score[i] = Convert.ToString(rdr["Score_Overall"]);
+            student_name[i] = (string)rdr["Name"];
+            email[i] = (string)rdr["Email"]+"@bu.edu";
+            img_pos[i] = (string)rdr["Image_Url"];
+            student_id[i] = Convert.ToString(rdr["Person_Id"]);
+        }
 
+
+        for(int j = 0; j < dis_num; j++)
+        {
+            img[j] = "<img src=\"" + img_pos[j] + "\" alt=\"profile\" width = 150 />";
+            //img[j] = "<p>" + img_pos[j] + "</p>";
+            name_link[j] = "<a href = \"user.aspx?id=" + student_id[j] + "\" > " + student_name[j] + "</a>";
+            course_link[j] = userPage + "?id=" + courseCode[j];
+            info[j] = img[j] + "</br>" + name_link[j] + "</br>" + email[j];
+        }
+
+      
+
+
+        profile1.InnerHtml = info[0];
+        rcc1.Text = courseCode[0] + " " + courseName[0];
+        rcc1.NavigateUrl = course_link[0];
+        rcs1_0.Text = score[0];
+        comment1.Text = text[0];
+        conn.Close();
         
-
-
-
-            /*while (rdr.Read() && i < dis_num)
-            {
-                courseCode[i] = (string)rdr["Code"];
-                courseName[i] = (string)rdr["Course_Name"];
-                text[i] = (string)rdr["Comments"];
-                score[i] = (string)rdr["Score_Overall"];
-                username[i] = (string)rdr["User_name"];
-                email[i] = (string)rdr["Email"];
-            }*/
-
-
-            courseCode[0] = "EC504";
-            courseName[0] = "Advanced Data Structure";
-            text[0] = "This is EC504";
-            score[0] = "5.0";
-            username[0] = "Haitian Jin";
-            email[0] = "Elinkin";
-
-          string img = "<img src=\"/image/default.png\"  alt=\"profile1\" width = 120 />";
-          string name = username[0];
-          string addr = email[0];
-          string info = img + "</br>" + name + "</br>" + addr + "@bu.edu";  
-          //logo.InnerHtml = info;
-          profile1.InnerHtml = info;
-          //conn.Close();
-
-
-
     }
 }
