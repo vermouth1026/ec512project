@@ -88,7 +88,7 @@
                         <div style="width: 83%; float: right; height: 150px">
                             <div style="height: 35px">
                                 <div style="float: left; width: 45%; padding-left: 10px">
-                                    <asp:HyperLink runat="server" ID="rcc1" NavigateUrl="course.aspx?id=ec501" Text="EC501 XXXXXX" />
+                                    <asp:Label runat="server" ID="rcc1" Text="EC501 XXXXXX" />
                                 </div>
                                 <div style="float: right; width: 45%; text-align: center">
                                     <asp:Label runat="server" ID="rcs1_0">5.0</asp:Label>
@@ -106,7 +106,7 @@
                         <div style="width: 83%; float: right; height: 150px">
                             <div style="height: 35px">
                                 <div style="float: left; width: 45%; padding-left: 10px">
-                                    <asp:HyperLink runat="server" ID="rcc2" NavigateUrl="course.aspx?id=ec502" Text="EC502 XXXXXX" />
+                                    <asp:Label runat="server" ID="rcc2" Text="EC502 XXXXXX" />
                                 </div>
                                 <div style="float: right; width: 45%; text-align: center">
                                     <asp:Label runat="server" ID="rcs2_0">5.0</asp:Label>
@@ -124,7 +124,7 @@
                         <div style="width: 83%; float: right; height: 150px">
                             <div style="height: 35px">
                                 <div style="float: left; width: 45%; padding-left: 10px">
-                                    <asp:HyperLink runat="server" ID="rcc3" NavigateUrl="course.aspx?id=ec503" Text="EC503 XXXXXX" />
+                                    <asp:Label runat="server" ID="rcc3" Text="EC503 XXXXXX" />
                                 </div>
                                 <div style="float: right; width: 45%; text-align: center">
                                     <asp:Label runat="server" ID="rcs3_0">5.0</asp:Label>
