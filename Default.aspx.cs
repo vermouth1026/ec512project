@@ -99,10 +99,10 @@ public partial class _Default : System.Web.UI.Page
 
     private void Load_Lower()
     {
-        int dis_num = 4;
+        int dis_num = 5;
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select top 5 c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) order by c.Datetime"; 
+        string cmdstr = "select top 5 c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) order by c.Datetime desc"; 
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
         int i = 0;
@@ -130,6 +130,7 @@ public partial class _Default : System.Web.UI.Page
             email[i] = (string)rdr["Email"]+"@bu.edu";
             img_pos[i] = (string)rdr["Image_Url"];
             student_id[i] = Convert.ToString(rdr["Person_Id"]);
+            i++;
         }
 
 
@@ -142,7 +143,7 @@ public partial class _Default : System.Web.UI.Page
             info[j] = img[j] + "</br>" + name_link[j] + "</br>" + email[j];
         }
 
-      
+        conn.Close();
 
 
         profile1.InnerHtml = info[0];
@@ -150,7 +151,37 @@ public partial class _Default : System.Web.UI.Page
         rcc1.NavigateUrl = course_link[0];
         rcs1_0.Text = score[0];
         comment1.Text = text[0];
-        conn.Close();
+
+
+        profile2.InnerHtml = info[1];
+        rcc2.Text = courseCode[1] + " " + courseName[1];
+        rcc2.NavigateUrl = course_link[1];
+        rcs2_0.Text = score[1];
+        comment2.Text = text[1];
+
+
+
+        profile3.InnerHtml = info[2];
+        rcc3.Text = courseCode[2] + " " + courseName[2];
+        rcc3.NavigateUrl = course_link[2];
+        rcs3_0.Text = score[2];
+        comment3.Text = text[2];
+
+
+
+        profile4.InnerHtml = info[3];
+        rcc4.Text = courseCode[3] + " " + courseName[3];
+        rcc4.NavigateUrl = course_link[3];
+        rcs4_0.Text = score[3];
+        comment4.Text = text[3];
+
+
+
+        profile5.InnerHtml = info[4];
+        rcc5.Text = courseCode[4] + " " + courseName[4];
+        rcc5.NavigateUrl = course_link[4];
+        rcs5_0.Text = score[4];
+        comment5.Text = text[4];     
         
     }
 }
