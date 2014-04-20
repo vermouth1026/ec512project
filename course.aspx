@@ -26,7 +26,7 @@
     </script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" action="course.aspx">
         <div style="width: 1000px; border: 1px solid silver; background-color: white">
             <div id="logo" runat="server" style="width: 1000px; height: 120px">
             </div>
@@ -150,21 +150,21 @@
                         <div id="profile0" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
                         <div style="width: 78%; float: right; height: 360px">
-                            <asp:TextBox ID="review" runat="server" Height="150px" Width="99%" TextMode="MultiLine"></asp:TextBox>
+                            <textarea id="review" name="review" style="width: 99%; height: 150px;"></textarea>
                             <br />
                             <br />
                             <div>
                                 <label style="float: left; font-size: x-large">Overall:</label>
                                 <div style="float: right">
-                                    <asp:RadioButton runat="server" GroupName="rate0" Text="1" Font-Size="X-Large"></asp:RadioButton>
+                                    <input type="radio" name="rate0" value="1" /><label style="font-size: x-large">1</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate0" Text="2" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate0" value="2" /><label style="font-size: x-large">2</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate0" Text="3" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate0" value="3" /><label style="font-size: x-large">3</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate0" Text="4" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate0" value="4" /><label style="font-size: x-large">4</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate0" Text="5" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate0" value="5" /><label style="font-size: x-large">5</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
@@ -173,15 +173,15 @@
                             <div>
                                 <label style="float: left; font-size: x-large">Professor:</label>
                                 <div style="float: right">
-                                    <asp:RadioButton runat="server" GroupName="rate1" Text="1" Font-Size="X-Large"></asp:RadioButton>
+                                    <input type="radio" name="rate1" value="1" /><label style="font-size: x-large">1</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate1" Text="2" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate1" value="2" /><label style="font-size: x-large">2</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate1" Text="3" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate1" value="3" /><label style="font-size: x-large">3</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate1" Text="4" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate1" value="4" /><label style="font-size: x-large">4</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate1" Text="5" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate1" value="5" /><label style="font-size: x-large">5</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
@@ -190,15 +190,15 @@
                             <div>
                                 <label style="float: left; font-size: x-large">Contents:</label>
                                 <div style="float: right">
-                                    <asp:RadioButton runat="server" GroupName="rate2" Text="1" Font-Size="X-Large"></asp:RadioButton>
+                                    <input type="radio" name="rate2" value="1" /><label style="font-size: x-large">1</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate2" Text="2" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate2" value="2" /><label style="font-size: x-large">2</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate2" Text="3" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate2" value="3" /><label style="font-size: x-large">3</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate2" Text="4" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate2" value="4" /><label style="font-size: x-large">4</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate2" Text="5" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate2" value="5" /><label style="font-size: x-large">5</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
@@ -207,22 +207,24 @@
                             <div>
                                 <label style="float: left; font-size: x-large">Difficulty:</label>
                                 <div style="float: right">
-                                    <asp:RadioButton runat="server" GroupName="rate3" Text="1" Font-Size="X-Large"></asp:RadioButton>
+                                    <input type="radio" name="rate3" value="1" /><label style="font-size: x-large">1</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate3" Text="2" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate3" value="2" /><label style="font-size: x-large">2</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate3" Text="3" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate3" value="3" /><label style="font-size: x-large">3</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate3" Text="4" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate3" value="4" /><label style="font-size: x-large">4</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <asp:RadioButton runat="server" GroupName="rate3" Text="5" Font-Size="X-Large"></asp:RadioButton>
+                                <input type="radio" name="rate3" value="5" /><label style="font-size: x-large">5</label>
                                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </div>
                             </div>
-                            <br /><br /><br />
+                            <br />
+                            <br />
+                            <br />
                             <div>
                                 <label id="errmsg" style="color: red"></label>
-                                <button type="submit" id="submit" style="float:right">Submit</button>
+                                <input type="button" onclick="mySubmit()" style="float: right" value="Submit" />
                             </div>
                         </div>
                     </div>
@@ -230,5 +232,59 @@
             </div>
         </div>
     </form>
+    <script>
+        function mySubmit()
+        {
+            var rates = document.forms[0].rate0;
+            var txt0 = "";
+            var i;
+            for (i = 0; i < rates.length; i++)
+            {
+                if (rates[i].checked)
+                    txt0 = txt0 + rates[i].value;
+            }
+            if (txt0 === "")
+            {
+                document.getElementById("errmsg").textContent = "Please complete your ratings!";
+                return;
+            }
+
+            rates = document.forms[0].rate1;
+            var txt1 = "";
+            for (i = 0; i < rates.length; i++) {
+                if (rates[i].checked)
+                    txt1 = txt1 + rates[i].value;
+            }
+            if (txt1 === "") {
+                document.getElementById("errmsg").textContent = "Please complete your ratings!";
+                return;
+            }
+
+            rates = document.forms[0].rate2;
+            var txt2 = "";
+            for (i = 0; i < rates.length; i++) {
+                if (rates[i].checked)
+                    txt2 = txt2 + rates[i].value;
+            }
+            if (txt2 === "") {
+                document.getElementById("errmsg").textContent = "Please complete your ratings!";
+                return;
+            }
+
+            rates = document.forms[0].rate3;
+            var txt3 = "";
+            for (i = 0; i < rates.length; i++) {
+                if (rates[i].checked)
+                    txt3 = txt3 + rates[i].value;
+            }
+            if (txt3 === "") {
+                document.getElementById("errmsg").textContent = "Please complete your ratings!";
+                return;
+            }
+            document.getElementById("errmsg").textContent = "";
+            document.getElementById("review").value = "The overall rating is " + txt0 + "\nThe professor rating is "
+                + txt1 + "\nThe content rating is " + txt2 + "\nThe difficulty rating is " + txt3;
+        }
+    </script>
 </body>
 </html>
