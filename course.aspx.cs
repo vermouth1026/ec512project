@@ -152,4 +152,8 @@ public partial class course : System.Web.UI.Page
     private void Load_Bottom()
     {
     }
+    protected void logout_Click(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -11,4 +11,8 @@ public partial class user : System.Web.UI.Page
     {
 
     }
+    protected void logout_Click(object sender, EventArgs e)
+    {
+
+    }
 }
