@@ -9,6 +9,8 @@ public partial class course : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        string textReview = Request.Form["review"];
+        string ratings1 = Request.Form["rate0"];
+        profile1.InnerHtml = textReview+"\nThe overall rating is "+ratings1;
     }
 }

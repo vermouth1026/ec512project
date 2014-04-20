@@ -235,6 +235,12 @@
     <script>
         function mySubmit()
         {
+            var text = document.forms[0].review;
+            if (text.value === "") {
+                document.getElementById("errmsg").textContent = "Please fill in your review!";
+                return;
+            }
+
             var rates = document.forms[0].rate0;
             var txt0 = "";
             var i;
@@ -281,9 +287,9 @@
                 document.getElementById("errmsg").textContent = "Please complete your ratings!";
                 return;
             }
-            document.getElementById("errmsg").textContent = "";
-            document.getElementById("review").value = "The overall rating is " + txt0 + "\nThe professor rating is "
-                + txt1 + "\nThe content rating is " + txt2 + "\nThe difficulty rating is " + txt3;
+
+            document.getElementById("myReview").style.display = "none";
+            document.getElementById("form1").submit();
         }
     </script>
 </body>
