@@ -34,7 +34,7 @@
             <div style="width: 1000px; border-top: 1px solid silver; overflow: hidden">
                 <div style="width: 485px; float: left; text-align: center; border-right: 1px solid silver; padding-left: 10px; overflow: hidden">
                     <h3>Computer Communications/Networks</h3>
-                    <div style="width: 420px; border: 1px solid silver; background-color: floralwhite">
+                    <div style="width: 420px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 400px">
                             <a href="course.aspx?id=ec505">EC505 XXXX XXXX XXXX</a>
                         </div>
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <h3>Software</h3>
-                    <div style="width: 420px; border: 1px solid silver; background-color: floralwhite">
+                    <div style="width: 420px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 400px">
                             <a href="course.aspx?id=ec504">EC504 XXXX XXXX XXXX</a>
                         </div>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <h3>Signal Processing and Communications</h3>
-                    <div style="width: 420px; border: 1px solid silver; background-color: mintcream">
+                    <div style="width: 420px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 400px">
                             <a href="course.aspx?id=ec505">EC505 XXXX XXXX XXXX</a>
                         </div>
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                     <h3>Solid-State Circuits, Devices and Materials</h3>
-                    <div style="width: 420px; border: 1px solid silver; background-color: mintcream">
+                    <div style="width: 420px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 400px">
                             <a href="course.aspx?id=ec571">EC571 XXXX XXXX XXXX</a>
                         </div>
@@ -202,7 +202,7 @@
                 </div>
                 <div style="width: 495px; float: right; text-align: center; padding-left: 0px; overflow: hidden">
                     <h3>Hardware</h3>
-                    <div style="width: 420px; border: 1px solid silver; background-color: floralwhite">
+                    <div style="width: 420px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 400px">
                             <a href="course.aspx?id=ec513">EC513 XXXX XXXX XXXX</a>
                         </div>
@@ -250,7 +250,7 @@
                         </div>
                     </div>
                     <h3>Cyber Security</h3>
-                    <div style="width: 420px; border: 1px solid silver; background-color: floralwhite">
+                    <div style="width: 420px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 400px">
                             <a href="course.aspx?id=ec504">EC504 XXXX XXXX XXXX</a>
                         </div>
@@ -262,7 +262,7 @@
                         </div>
                     </div>
                     <h3>Systems and Control</h3>
-                    <div style="width: 420px; border: 1px solid silver; background-color: mintcream">
+                    <div style="width: 420px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 400px">
                             <a href="course.aspx?id=ec501">EC501 XXXX XXXX XXXX</a>
                         </div>
@@ -292,7 +292,7 @@
                         </div>
                     </div>
                     <h3>Electromagnetics and Photonics</h3>
-                    <div style="width: 420px; border: 1px solid silver; background-color: mintcream">
+                    <div style="width: 420px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 400px">
                             <a href="course.aspx?id=ec560">EC560 XXXX XXXX XXXX</a>
                         </div>
