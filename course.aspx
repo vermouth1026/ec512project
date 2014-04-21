@@ -17,10 +17,10 @@
             }
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById("myComment").innerHTML = xmlhttp.responseText;
+                    document.getElementById("psReviews").innerHTML = xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET", "reviews.aspx", true);
+            xmlhttp.open("GET", "reviews.aspx?id="+document.getElementById("pgNum").value, true);
             xmlhttp.send();
         }
     </script>
@@ -141,7 +141,7 @@
                                 <div style="float: left; width: 45%; padding-left: 10px">
                                     <asp:Label runat="server" ID="rcc3" Text="EC503 XXXXXX" />
                                 </div>
-                                 <div style="float: right; width: 45%; text-align: right">
+                                <div style="float: right; width: 45%; text-align: right">
                                     <asp:Label runat="server" ID="rcs3_0" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Tomato" ForeColor="White">&nbsp Total: 5 &nbsp</asp:Label>
                                     <asp:Label runat="server" ID="rcs3_1" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Orange" ForeColor="White">&nbsp Prof: 5 &nbsp</asp:Label>
                                     <asp:Label runat="server" ID="rcs3_2" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="deepskyblue" ForeColor="White">&nbsp Cont: 5 &nbsp</asp:Label>
@@ -153,6 +153,7 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" id="pgNum" name="pgNum" value="1" />
                     <br style="clear: both" />
 
                 </div>
@@ -239,7 +240,7 @@
                             <br />
                             <div>
                                 <label id="errmsg" style="color: red"></label>
-                                <input type="hidden" name="cnum" id="cnum" value="0"/>
+                                <input type="hidden" name="cnum" id="cnum" value="0" />
                                 <input type="button" onclick="mySubmit()" style="float: right" value="Submit" />
                             </div>
                         </div>
