@@ -20,7 +20,8 @@
                     document.getElementById("myComment").innerHTML = xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET", "reviews.aspx", true);
+            var num = document.getElementById("num").textContent;
+            xmlhttp.open("GET", "reviews.aspx?id="+num.toString, true);
             xmlhttp.send();
         }
     </script>
