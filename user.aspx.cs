@@ -102,7 +102,7 @@ public partial class user : System.Web.UI.Page
         int dis_num = 8;
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall, COURSE.Score_Contents, COURSE.Score_Hardness, COURSE.Score_Professor from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) order by c.Datetime desc";
+        string cmdstr = "select c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall, COURSE.Score_Contents, COURSE.Score_Hardness, COURSE.Score_Professor from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) where c.Person_Id='"+userId+"'";
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
         int i = 0;
@@ -130,6 +130,9 @@ public partial class user : System.Web.UI.Page
             courseName[i] = (string)rdr["Course_Name"];
             text[i] = (string)rdr["Comments"];
             score0[i] = Convert.ToString(rdr["Score_Overall"]).Substring(0, 1);
+            score1[i] = Convert.ToString(rdr["Score_Professor"]).Substring(0, 1);
+            score2[i] = Convert.ToString(rdr["Score_Contents"]).Substring(0, 1);
+            score3[i] = Convert.ToString(rdr["Score_Hardness"]).Substring(0, 1);
             student_name[i] = (string)rdr["Name"];
             email[i] = (string)rdr["Email"] + "@bu.edu";
             img_pos[i] = (string)rdr["Image_Url"];
@@ -240,8 +243,8 @@ public partial class user : System.Web.UI.Page
         rcs8_2.Text = "&nbsp Total: " + score2[7] + " &nbsp";
         rcs8_3.Text = "&nbsp Total: " + score3[7] + " &nbsp";
         comment8.Text = text[7]; 
-
     }
+
 
     protected void logout_Click(object sender, EventArgs e)
     {
