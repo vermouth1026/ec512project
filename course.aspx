@@ -302,7 +302,7 @@
             }
 
             var temp = document.getElementById("cnum");
-            temp.value = document.getElementById("num");
+            temp.value = document.getElementById("num").textContent;
             document.getElementById("form1").submit();
         }
     </script>
