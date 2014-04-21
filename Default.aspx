@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 
@@ -98,7 +98,7 @@
             <div style="padding-left: 10px; padding-right: 10px; height: 1450px">
                 <h3>Recent Reviews</h3>
                 <div style="padding-left: 10px; padding-right: 10px">
-                    <div style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                    <div id="rr1" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile1" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
                         <div style="width: 78%; float: right; height: 200px">
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                     <br />
-                    <div style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                    <div id="rr2" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile2" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
                         <div style="width: 78%; float: right; height: 200px">
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                     <br />
-                    <div style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                    <div id="rr3" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile3" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
                         <div style="width: 78%; float: right; height: 200px">
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                     <br />
-                    <div style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                    <div id="rr4" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile4" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
                         <div style="width: 78%; float: right; height: 200px">
@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     <br />
-                    <div style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                    <div id="rr5" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile5" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
                         <div style="width: 78%; float: right; height: 200px">
