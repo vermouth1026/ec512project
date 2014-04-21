@@ -116,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <br />
                     <div id="rr2" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile2" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <br />
                     <div id="rr3" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile3" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
@@ -158,7 +158,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <br />
                     <div id="rr4" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile4" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <br />
                     <div id="rr5" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile5" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
@@ -200,7 +200,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <br />
                     <div id="rr6" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile6" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
@@ -221,7 +221,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <br />
                     <div id="rr7" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile7" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
@@ -242,7 +242,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <br />
                     <div id="rr8" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile8" runat="server" style="width: 20%; float: left; height: 200px">
                         </div>
@@ -263,7 +263,7 @@
                             </div>
                         </div>
                     </div>
-
+ 
 
                 </div>
             </div>
