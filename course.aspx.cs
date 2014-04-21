@@ -14,7 +14,13 @@ public partial class course : System.Web.UI.Page
     private const string registerPage = "register.aspx";
     private const string userPage = "user.aspx";
     private const string homePage = "Default.aspx";
-    private string c_id = "";
+    private string c_id = null;
+    private int total_num = 0;
+
+    private bool cmted = false;
+    private bool auth = false;
+    private string usern = "jht";
+
     private const string connString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
 
     protected void Page_Load(object sender, EventArgs e)
@@ -22,21 +28,37 @@ public partial class course : System.Web.UI.Page
         this.c_id = Request.QueryString["id"];
         Load_Upper();
         Load_Middle();
-        //Load_Bottom();
+        decidepag_num();
+        if (Request.Form["rate0"] != null)
+        {
+            c_id = Request.Form["cnum"];
+            Info_Insert();   //data insert
+        }
+        check_comt();
+        if (cmted || auth)
+        {
+            myReview.Visible = false;
+        }
+        else
+        {
+            Load_Bottom();
+        }
+
+        
     }
 
     private void Load_Upper()
     {
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select * from COURSE where COURSE.Code='" + c_id + "'"; 
+        string cmdstr = "select * from COURSE where COURSE.Code='" + c_id + "'";
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
 
         string courseCode = c_id;
         string courseID = "";
 
-        while(rdr.Read())
+        while (rdr.Read())
         {
             courseID = Convert.ToString(rdr["Id"]);  // course ID not CODE!!!!
 
@@ -55,12 +77,12 @@ public partial class course : System.Web.UI.Page
             score2.Text = score_c;
             score3.Text = score_h;
         }
-        
+
         conn.Close();
-        
+
         conn.Open();
         cmdstr = "select Specialization_Id from COURSE_SPECIALIZATION where Course_Id='" + courseID + "'";
-        SqlCommand cmd1 = new SqlCommand(cmdstr, conn);        
+        SqlCommand cmd1 = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr1 = cmd1.ExecuteReader();
         string specID = "";
         while (rdr1.Read())
@@ -80,7 +102,7 @@ public partial class course : System.Web.UI.Page
         }
         conn.Close();
 
-        spec.Text = "Specialization: " + specName;        
+        spec.Text = "Specialization: " + specName;
     }
 
     private void Load_Middle()
@@ -88,14 +110,17 @@ public partial class course : System.Web.UI.Page
         int dis_num = 3;
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) where COURSE.Code='" + c_id + "' order by c.Datetime desc";
+        string cmdstr = "select c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall,COURSE.Score_Professor,COURSE.Score_Contents,COURSE.Score_Hardness from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) where COURSE.Code='" + c_id + "' order by c.Datetime desc";
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
         int i = 0;
         string[] courseCode = new string[dis_num];
         string[] courseName = new string[dis_num];
         string[] text = new string[dis_num];
-        string[] score = new string[dis_num];
+        string[] score0 = new string[dis_num];
+        string[] score1 = new string[dis_num];
+        string[] score2 = new string[dis_num];
+        string[] score3 = new string[dis_num];
         string[] student_name = new string[dis_num];
         string[] email = new string[dis_num];
         string[] profile = new string[dis_num];
@@ -111,7 +136,11 @@ public partial class course : System.Web.UI.Page
             courseCode[i] = (string)rdr["Code"];
             courseName[i] = (string)rdr["Course_Name"];
             text[i] = (string)rdr["Comments"];
-            score[i] = Convert.ToString(rdr["Score_Overall"]);
+            score0[i] = Convert.ToString(rdr["Score_Overall"]).Substring(0, 1);
+            score1[i] = Convert.ToString(rdr["Score_Professor"]).Substring(0, 1);
+            score2[i] = Convert.ToString(rdr["Score_Contents"]).Substring(0, 1);
+            score3[i] = Convert.ToString(rdr["Score_Hardness"]).Substring(0, 1);
+
             student_name[i] = (string)rdr["Name"];
             email[i] = (string)rdr["Email"] + "@bu.edu";
             img_pos[i] = (string)rdr["Image_Url"];
@@ -132,28 +161,136 @@ public partial class course : System.Web.UI.Page
 
         profile1.InnerHtml = info[0];
         rcc1.Text = courseCode[0] + " " + courseName[0];
-        rcs1_0.Text = score[0];
+        rcs1_0.Text = "&nbsp Total: " + score0[0] + " &nbsp";
+        rcs1_1.Text = "&nbsp Prof: " + score1[0] + " &nbsp";
+        rcs1_2.Text = "&nbsp Cont: " + score2[0] + " &nbsp";
+        rcs1_3.Text = "&nbsp Hard: " + score3[0] + " &nbsp";
         comment1.Text = text[0];
-
 
         profile2.InnerHtml = info[1];
         rcc2.Text = courseCode[1] + " " + courseName[1];
-        rcs2_0.Text = score[1];
+        rcs2_0.Text = "&nbsp Total: " + score0[1] + " &nbsp";
+        rcs2_1.Text = "&nbsp Prof: " + score1[1] + " &nbsp";
+        rcs2_2.Text = "&nbsp Cont: " + score2[1] + " &nbsp";
+        rcs2_3.Text = "&nbsp Hard: " + score3[1] + " &nbsp";
         comment2.Text = text[1];
-
-
 
         profile3.InnerHtml = info[2];
         rcc3.Text = courseCode[2] + " " + courseName[2];
-        rcs3_0.Text = score[2];
+        rcs3_0.Text = "&nbsp Total: " + score0[2] + " &nbsp";
+        rcs3_1.Text = "&nbsp Prof: " + score1[2] + " &nbsp";
+        rcs3_2.Text = "&nbsp Cont: " + score2[2] + " &nbsp";
+        rcs3_3.Text = "&nbsp Hard: " + score3[2] + " &nbsp";
         comment3.Text = text[2];
     }
 
     private void Load_Bottom()
     {
+
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select * from PERSON where Name='"+usern+"'";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        string img = null;
+        string name_link = null;
+        string email = null;
+        while (rdr.Read())
+        {
+            img = "<img src=\"" + (string)rdr["Image_Url"] + "\" alt=\"profile\" width = 150 />";
+            name_link = "<a href = \"user.aspx?id=" + (string)rdr["Name"] + "\" > " + (string)rdr["Name"] + "</a>";
+            email = (string)rdr["Email"];
+        }
+        conn.Close();
+        profile0.InnerHtml = img+"<br>"+name_link+"<br>"+email+"@bu.edu";
+    }
+
+    private void Info_Insert()
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select Id from COURSE where Code='" + c_id + "'";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        string courseId = "";   //"course_id"
+        while (rdr.Read())
+        {
+            courseId = Convert.ToString(rdr["Id"]);
+        }
+        conn.Close();
+
+        conn.Open();
+        cmdstr = "select Id from PERSON where Name='" + usern + "'";
+        SqlCommand cmd1 = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr1 = cmd1.ExecuteReader();
+        string personId = "";   //"person_id"
+        while (rdr1.Read())
+        {
+            personId = Convert.ToString(rdr1["Id"]);
+        }
+        conn.Close();
+
+        string comments = Request.Form["review"];
+        string score0 = Request.Form["rate0"];
+        string score1 = Request.Form["rate1"];
+        string score2 = Request.Form["rate2"];
+        string score3 = Request.Form["rate3"];
+
+
+
+        conn.Open();
+        cmdstr = "insert into RATING (Person_id, Course_id, Comments, Score_Overall, Score_Professor, Score_Contents, Score_Hardness) " +
+ "values ('" + personId + "', '" + courseId + "', '" + comments + "', '" + score0 + "','" + score1 + "','" + score2 + "','" + score3 + "')";
+        SqlCommand cmd2 = new SqlCommand(cmdstr, conn);
+        cmd2.ExecuteNonQuery();
+        conn.Close();
+    }
+
+    private void decidepag_num()
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select Distinct Comment_Count from (select c.Comment_Count,r.Person_Id,r.Comments,r.Score_Contents,r.Score_Hardness,r.Score_Overall,r.Score_Professor from RATING r inner join COURSE c on r.Course_Id=c.Id where c.Code='" + c_id + "') c inner join PERSON p on c.Person_Id=p.Id";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        while (rdr.Read())
+        {
+            total_num = (int)rdr["Comment_Count"];
+        }
+        conn.Close();
+
+        if (total_num <= 3)
+        {
+            next.Visible = false;
+        } if (total_num > 3 && total_num <= 6)
+        {
+            corner.Value = "last";
+        }
+
+    }
+
+    private void check_comt()
+    {
+
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select *from (select r.Person_Id from RATING r inner join COURSE c on r.Course_Id=c.Id where c.Code='" + c_id + "') a inner join PERSON p on a.Person_Id=p.Id where p.Name='" + usern + "'";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        string check = "";
+        while (rdr.Read())
+        {
+            check = (string)rdr["Name"];
+        }
+        if (check != "")
+        {
+            cmted = true;
+        }
+
     }
     protected void logout_Click(object sender, EventArgs e)
     {
+
 
     }
 }
