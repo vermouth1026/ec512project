@@ -20,8 +20,40 @@
                     document.getElementById("psReviews").innerHTML = xmlhttp.responseText;
                 }
             }
+
+            var pageNum = document.getElementById("pgNum");
+            if (pageNum.value === "1")
+                document.getElementById("last").style.display = "block";
+            if (document.getElementById("corner").value === "last")
+                document.getElementById("next").style.display = "none";
+
             xmlhttp.open("GET", "reviews.aspx?id=" + document.getElementById("num").textContent
-                + "_" + document.getElementById("pgNum").value, true);
+                + "_" + (parseInt(pageNum.value) + 1), true);
+            xmlhttp.send();
+        }
+
+        function loadPreviousPage() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("psReviews").innerHTML = xmlhttp.responseText;
+                }
+            }
+
+            var pageNum = document.getElementById("pgNum");
+            if (pageNum.value === "2")
+                document.getElementById("last").style.display = "none";
+            if (document.getElementById("corner").value === "last")
+                document.getElementById("next").style.display = "block";
+
+            xmlhttp.open("GET", "reviews.aspx?id=" + document.getElementById("num").textContent
+                + "_" + (parseInt(pageNum.value) - 1), true);
             xmlhttp.send();
         }
     </script>
@@ -155,11 +187,13 @@
                         </div>
                     </div>
                     <input type="hidden" id="pgNum" name="pgNum" value="1" />
+                    <input type="hidden" id="corner" name="corner" value="1st" />
                     <br style="clear: both" />
 
                 </div>
                 <div style="padding-left: 10px">
-                    <button type="button" id="next" onclick="loadNextPage()">Next Page</button>
+                    <button runat="server" type="button" id="next" onclick="loadNextPage()" style="width: 110px; float:left">Next Page</button>
+                    <button runat="server" type="button" id="last" onclick="loadPreviousPage()" style="width: 110px; display:none">Previous Page</button>
                 </div>
                 <br />
             </div>

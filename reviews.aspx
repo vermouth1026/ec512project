@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="psReviews" style="padding-left: 10px; padding-right: 10px">
+        <div id="psReviews">
             <div style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
                 <div id="profile1" runat="server" style="width: 15%; float: left; height: 150px">
                 </div>
@@ -72,7 +72,8 @@
                     </div>
                 </div>
             </div>
-            <input type="hidden" id="pgNum" name="pgNum" value=""/>
+            <input type="hidden" id="pgNum" name="pgNum" value="" />
+            <input type="hidden" id="corner" name="corner" value="" />
             <br style="clear: both" />
 
         </div>
