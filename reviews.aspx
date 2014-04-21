@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div id="psReviews">
-            <div style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
+            <div id="review1" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
                 <div id="profile1" runat="server" style="width: 15%; float: left; height: 150px">
                 </div>
                 <div style="width: 83%; float: right; height: 150px">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <br />
-            <div style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
+            <div id="review2" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
                 <div id="profile2" runat="server" style="width: 15%; float: left; height: 150px">
                 </div>
                 <div style="width: 83%; float: right; height: 150px">
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <br />
-            <div style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
+            <div id="review3" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
                 <div id="profile3" runat="server" style="width: 15%; float: left; height: 150px">
                 </div>
                 <div style="width: 83%; float: right; height: 150px">
