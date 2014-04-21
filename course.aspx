@@ -20,8 +20,7 @@
                     document.getElementById("myComment").innerHTML = xmlhttp.responseText;
                 }
             }
-            var num = document.getElementById("num").textContent;
-            xmlhttp.open("GET", "reviews.aspx?id="+num.toString, true);
+            xmlhttp.open("GET", "reviews.aspx", true);
             xmlhttp.send();
         }
     </script>
@@ -231,6 +230,7 @@
                             <br />
                             <div>
                                 <label id="errmsg" style="color: red"></label>
+                                <input type="hidden" name="cnum" id="cnum" value="0"/>
                                 <input type="button" onclick="mySubmit()" style="float: right" value="Submit" />
                             </div>
                         </div>
@@ -295,6 +295,8 @@
                 return;
             }
 
+            var temp = document.getElementById("cnum");
+            temp.value = document.getElementById("num");
             document.getElementById("form1").submit();
         }
     </script>
