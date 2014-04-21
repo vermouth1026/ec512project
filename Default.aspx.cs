@@ -1,227 +1,213 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
+<!DOCTYPE html>
 
-public partial class _Default : System.Web.UI.Page
-{
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Homepage</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="width: 1000px; border: 1px solid silver; background-color: white">
+            <div id="logo" runat="server" style="width: 1000px; height: 120px">
+            </div>
+            <div id="navi1" style="width: 1000px; border-top: 1px solid silver; overflow: hidden">
+                <div id="navigate1" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+                    <a href="Default.aspx">Home</a>&nbsp&nbsp<a href="courselist.aspx">Course</a>
+                </div>
+                <div id="account1" style="width: 490px; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+                    <a href="login.aspx">Log in</a>&nbsp&nbsp<a href="register.aspx">Register</a>
+                </div>
+                <br style="clear: both" />
+            </div>
+            <div id="navi2" style="width: 1000px; border-top: 1px solid silver; display: normal; overflow: hidden">
+                <div id="navigate2" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+                    <a href="Default.aspx">Home</a>&nbsp&nbsp<a href="courselist.aspx">Course</a>&nbsp&nbsp<asp:HyperLink ID="mypage" runat="server" Text="My page" NavigateUrl="user.aspx"></asp:HyperLink>
+                </div>
+                <div id="account2" style="width: 490px; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
+                    <asp:Label ID="greeting" runat="server" Text="Hello, Shuibi!"></asp:Label>&nbsp&nbsp<asp:LinkButton ID="logout" runat="server" Text="Log out" OnClick="logout_Click"></asp:LinkButton>
+                </div>
+                <br style="clear: both" />
+            </div>
+            <div style="width: 1000px; border-top: 1px solid silver; border-bottom: 1px solid silver;">
+                <div style="width: 485px; float: left; text-align: left; height: 160px; border-right: 1px solid silver; padding-left: 10px">
+                    <h3>Highest Scored Courses</h3>
+                    <div style="width: 385px; float: left">
+                        <asp:HyperLink runat="server" ID="hsc1" NavigateUrl="course.aspx?id=ec500" Text="EC500 XXXXXX" />
+                    </div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="hss1">5.0</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left">
+                        <asp:HyperLink runat="server" ID="hsc2" NavigateUrl="course.aspx?id=ec501" Text="EC501 XXXXXX" />
+                    </div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="hss2"> 4.9</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left">
+                        <asp:HyperLink runat="server" ID="hsc3" NavigateUrl="course.aspx?id=ec502" Text="EC502 XXXXXX" />
+                    </div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="hss3"> 4.8</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left">
+                        <asp:HyperLink runat="server" ID="hsc4" NavigateUrl="course.aspx?id=ec503" Text="EC503 XXXXXX" />
+                    </div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="hss4"> 4.7</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                </div>
+                <div style="width: 495px; float: right; text-align: left; height: 160px; padding-left: 0px">
+                    <h3>Most Commented Courses</h3>
+                    <div style="width: 385px; float: left">
+                        <asp:HyperLink runat="server" ID="mcc1" NavigateUrl="course.aspx?id=ec500" Text="EC500 XXXXXX" />
+                    </div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="mcs1">100</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left">
+                        <asp:HyperLink runat="server" ID="mcc2" NavigateUrl="course.aspx?id=ec501" Text="EC501 XXXXXX" />
+                    </div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="mcs2">99</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left">
+                        <asp:HyperLink runat="server" ID="mcc3" NavigateUrl="course.aspx?id=ec502" Text="EC502 XXXXXX" />
+                    </div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="mcs3">98</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                    <div style="width: 385px; float: left">
+                        <asp:HyperLink runat="server" ID="mcc4" NavigateUrl="course.aspx?id=ec503" Text="EC503 XXXXXX" />
+                    </div>
+                    <div style="width: 100px; float: left; text-align: center">
+                        <asp:Label runat="server" ID="mcs4">97</asp:Label>
+                    </div>
+                    <br style="clear: both" />
+                </div>
+                <br style="clear: both" />
+            </div>
+            <div style="padding-left: 30px; padding-right: 30px; overflow-y:hidden">
+                <h3>Recent Reviews</h3>
+                <div>
+                    <div id="rr1" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                        <div id="profile1" runat="server" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 78%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc1" NavigateUrl="course.aspx?id=ec501" Text="EC501 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: right">
+                                    <asp:Label runat="server" ID="rcs1_0" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Tomato" ForeColor="White">&nbsp Total: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs1_1" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Orange" ForeColor="White">&nbsp Prof: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs1_2" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="deepskyblue" ForeColor="White">&nbsp Cont: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs1_3" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="seagreen" ForeColor="White">&nbsp Hard: 5 &nbsp</asp:Label>
+                                </div>
+                            </div>
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment1">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div id="rr2" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                        <div id="profile2" runat="server" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 78%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc2" NavigateUrl="course.aspx?id=ec502" Text="EC502 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: right">
+                                    <asp:Label runat="server" ID="rcs2_0" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Tomato" ForeColor="White">&nbsp Total: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs2_1" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Orange" ForeColor="White">&nbsp Prof: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs2_2" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="deepskyblue" ForeColor="White">&nbsp Cont: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs2_3" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="seagreen" ForeColor="White">&nbsp Hard: 5 &nbsp</asp:Label>
+                                </div>
+                            </div>
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment2">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div id="rr3" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                        <div id="profile3" runat="server" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 78%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc3" NavigateUrl="course.aspx?id=ec503" Text="EC503 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: right">
+                                    <asp:Label runat="server" ID="rcs3_0" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Tomato" ForeColor="White">&nbsp Total: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs3_1" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Orange" ForeColor="White">&nbsp Prof: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs3_2" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="deepskyblue" ForeColor="White">&nbsp Cont: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs3_3" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="seagreen" ForeColor="White">&nbsp Hard: 5 &nbsp</asp:Label>
+                                </div>
+                            </div>
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment3">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div id="rr4" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                        <div id="profile4" runat="server" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 78%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc4" NavigateUrl="course.aspx?id=ec504" Text="EC504 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: right">
+                                    <asp:Label runat="server" ID="rcs4_0" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Tomato" ForeColor="White">&nbsp Total: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs4_1" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Orange" ForeColor="White">&nbsp Prof: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs4_2" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="deepskyblue" ForeColor="White">&nbsp Cont: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs4_3" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="seagreen" ForeColor="White">&nbsp Hard: 5 &nbsp</asp:Label>
+                                </div>
+                            </div>
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment4">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div id="rr5" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
+                        <div id="profile5" runat="server" style="width: 20%; float: left; height: 200px">
+                        </div>
+                        <div style="width: 78%; float: right; height: 200px">
+                            <div style="height: 35px">
+                                <div style="float: left; width: 45%; padding-left: 10px">
+                                    <asp:HyperLink runat="server" ID="rcc5" NavigateUrl="course.aspx?id=ec505" Text="EC505 XXXXXX" />
+                                </div>
+                                <div style="float: right; width: 45%; text-align: right">
+                                    <asp:Label runat="server" ID="rcs5_0" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Tomato" ForeColor="White">&nbsp Total: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs5_1" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Orange" ForeColor="White">&nbsp Prof: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs5_2" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="deepskyblue" ForeColor="White">&nbsp Cont: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs5_3" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="seagreen" ForeColor="White">&nbsp Hard: 5 &nbsp</asp:Label>
+                                </div>
+                            </div>
+                            <div style="text-align: left; border: 1px solid silver; height: 150px; padding: 10px 10px 10px 10px; background-color: white">
+                                <asp:Label runat="server" ID="comment5">Lorem ipsum onsectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <br style="clear: both" />
+                </div>
+            </div>
+        </div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [COURSE]"></asp:SqlDataSource>
 
-    private const string coursePage = "course.aspx";
-    private const string courseListPage = "courselist.aspx";
-    private const string loginPage = "login.aspx";
-    private const string registerPage = "register.aspx";
-    private const string userPage = "user.aspx";
-    private const string homePage = "Default.aspx";
-    private const string connString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
-    
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        Load_UpperLeft();
-        Load_UpperRight();
-        Load_Lower();        
-    }
-
-    private void Load_UpperLeft()
-    {
-        SqlConnection conn = new SqlConnection(connString);
-        conn.Open();
-        string cmdstr = "select * from COURSE order by Score_Overall desc";
-        SqlCommand cmd = new SqlCommand(cmdstr, conn);
-        SqlDataReader rdr = cmd.ExecuteReader();
-        string[] Output = new string[4];
-        string[] Score = new string[4];
-        string[] courseCode = new string[4];
-        int ii = 0;
-        while (rdr.Read() && ii < 4)
-        {
-            string sl = (string)rdr["Code"] + " " + (string)rdr["Name"];
-            courseCode[ii] = (string)rdr["Code"];
-            Score[ii] = Convert.ToString(rdr["Score_Overall"]);
-            Output[ii] = sl;
-            ii++;
-        }
-        conn.Close();
-        hsc1.Text = Output[0];
-        hsc2.Text = Output[1];
-        hsc3.Text = Output[2];
-        hsc4.Text = Output[3];
-        hss1.Text = Score[0];
-        hss2.Text = Score[1];
-        hss3.Text = Score[2];
-        hss4.Text = Score[3];
-        hsc1.NavigateUrl = coursePage + "?id=" + courseCode[0];
-        hsc2.NavigateUrl = coursePage + "?id=" + courseCode[1];
-        hsc3.NavigateUrl = coursePage + "?id=" + courseCode[2];
-        hsc4.NavigateUrl = coursePage + "?id=" + courseCode[3];
-    }
-
-
-    private void Load_UpperRight()
-    {
-        SqlConnection conn = new SqlConnection(connString);
-        conn.Open();
-
-        string cmdstr = "select * from COURSE order by Comment_Count desc";
-        SqlCommand cmd = new SqlCommand(cmdstr, conn);
-        SqlDataReader rdr = cmd.ExecuteReader();
-        int i = 0;
-        string[] s = new string[4];
-        string[] links = new string[4];
-        int[] num = new int[4];
-        while (rdr.Read() && i < 4)
-        {
-            links[i] = (string)rdr["Code"];
-            s[i] = links[i] + " " + (string)rdr["Name"];
-            num[i] = (int)rdr["Comment_Count"];
-            i++;
-        }
-        conn.Close();
-        
-        mcc1.Text = s[0];
-        mcc2.Text = s[1];
-        mcc3.Text = s[2];
-        mcc4.Text = s[3];
-
-        mcc1.NavigateUrl = coursePage + "?id=" + links[0];
-        mcc2.NavigateUrl = coursePage + "?id=" + links[1];
-        mcc3.NavigateUrl = coursePage + "?id=" + links[2];
-        mcc4.NavigateUrl = coursePage + "?id=" + links[3];
-
-        mcs1.Text = Convert.ToString(num[0]);
-        mcs2.Text = Convert.ToString(num[1]);
-        mcs3.Text = Convert.ToString(num[2]);
-        mcs4.Text = Convert.ToString(num[3]);
-    }
-
-    private void Load_Lower()
-    {
-        int dis_num = 5;
-        SqlConnection conn = new SqlConnection(connString);
-        conn.Open();
-        string cmdstr = "select c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall, COURSE.Score_Contents, COURSE.Score_Hardness, COURSE.Score_Professor from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) order by c.Datetime desc"; 
-        SqlCommand cmd = new SqlCommand(cmdstr, conn);
-        SqlDataReader rdr = cmd.ExecuteReader();
-        int i = 0;
-        string[] courseCode = new string[dis_num];
-        string[] courseName = new string[dis_num];
-        string[] text = new string[dis_num];
-        string[] score0 = new string[dis_num];
-        string[] score1 = new string[dis_num];
-        string[] score2 = new string[dis_num];
-        string[] score3 = new string[dis_num];
-
-        string[] student_name = new string[dis_num];
-        string[] email = new string[dis_num];
-        string[] profile = new string[dis_num];
-        string[] student_id = new string[dis_num];
-        string[] name_link = new string[dis_num];
-        string[] course_link = new string[dis_num];
-        string[] img_pos = new string[dis_num];
-        string[] img = new string[dis_num];
-        string[] info = new string[dis_num];
-      
-        while (rdr.Read() && i < dis_num)
-        {
-            courseCode[i] = (string)rdr["Code"];
-            courseName[i] = (string)rdr["Course_Name"];
-            text[i] = (string)rdr["Comments"];
-            score0[i] = Convert.ToString(rdr["Score_Overall"]).Substring(0,1);
-            student_name[i] = (string)rdr["Name"];
-            email[i] = (string)rdr["Email"]+"@bu.edu";
-            img_pos[i] = (string)rdr["Image_Url"];
-            student_id[i] = Convert.ToString(rdr["Person_Id"]);
-            i++;
-        }
-
-        
-        switch(i)
-        {
-            case 0:
-                rr1.Visible = false; rr2.Visible = false; rr3.Visible = false; rr4.Visible = false; rr5.Visible = false; break;
-            case 1:
-                rr2.Visible = false; rr3.Visible = false; rr4.Visible = false; rr5.Visible = false; break;
-            case 2:
-                rr3.Visible = false; rr4.Visible = false; rr5.Visible = false; break;
-            case 3:
-                rr4.Visible = false; rr5.Visible = false; break;
-            case 4:
-                rr5.Visible = false; break;
-            default: break;
-        }
-        
-
-        for(int j = 0; j < dis_num; j++)
-        {
-            img[j] = "<img src=\"" + img_pos[j] + "\" alt=\"profile\" width = 150 />";
-            //img[j] = "<p>" + img_pos[j] + "</p>";
-            name_link[j] = "<a href = \"user.aspx?id=" + student_id[j] + "\" > " + student_name[j] + "</a>";
-            course_link[j] = coursePage + "?id=" + courseCode[j];
-            info[j] = img[j] + "</br>" + name_link[j] + "</br>" + email[j];
-        }
-
-        conn.Close();
-
-
-        profile1.InnerHtml = info[0];
-        rcc1.Text = courseCode[0] + " " + courseName[0];
-        rcc1.NavigateUrl = course_link[0];
-        rcs1_0.Text = "&nbsp Total: " + score0[0] + " &nbsp";
-        rcs1_1.Text = "&nbsp Prof: " + score1[0] + " &nbsp";
-        rcs1_2.Text = "&nbsp Cont: " + score2[0] + " &nbsp";
-        rcs1_3.Text = "&nbsp Hard: " + score3[0] + " &nbsp";
-        comment1.Text = text[0];
-
-
-        profile2.InnerHtml = info[1];
-        rcc2.Text = courseCode[1] + " " + courseName[1];
-        rcc2.NavigateUrl = course_link[1];
-        rcs2_0.Text = "&nbsp Total: " + score0[1] + " &nbsp";
-        rcs2_1.Text = "&nbsp Prof: " + score1[1] + " &nbsp";
-        rcs2_2.Text = "&nbsp Cont: " + score2[1] + " &nbsp";
-        rcs2_3.Text = "&nbsp Hard: " + score3[1] + " &nbsp";
-        comment2.Text = text[1];
-
-
-
-        profile3.InnerHtml = info[2];
-        rcc3.Text = courseCode[2] + " " + courseName[2];
-        rcc3.NavigateUrl = course_link[2];
-        rcs3_0.Text = "&nbsp Total: " + score0[2] + " &nbsp";
-        rcs3_1.Text = "&nbsp Prof: " + score1[2] + " &nbsp";
-        rcs3_2.Text = "&nbsp Cont: " + score2[2] + " &nbsp";
-        rcs3_3.Text = "&nbsp Hard: " + score3[2] + " &nbsp";
-        comment3.Text = text[2];
-
-
-
-        profile4.InnerHtml = info[3];
-        rcc4.Text = courseCode[3] + " " + courseName[3];
-        rcc4.NavigateUrl = course_link[3];
-        rcs4_0.Text = "&nbsp Total: " + score0[3] + " &nbsp";
-        rcs4_1.Text = "&nbsp Prof: " + score1[3] + " &nbsp";
-        rcs4_2.Text = "&nbsp Cont: " + score2[3] + " &nbsp";
-        rcs4_3.Text = "&nbsp Hard: " + score3[3] + " &nbsp";
-        comment4.Text = text[3];
-
-
-
-        profile5.InnerHtml = info[4];
-        rcc5.Text = courseCode[4] + " " + courseName[4];
-        rcc5.NavigateUrl = course_link[4];
-        rcs5_0.Text = "&nbsp Total: " + score0[4] + " &nbsp";
-        rcs5_1.Text = "&nbsp Prof: " + score1[4] + " &nbsp";
-        rcs5_2.Text = "&nbsp Total: " + score2[4] + " &nbsp";
-        rcs5_3.Text = "&nbsp Total: " + score3[4] + " &nbsp";
-        comment5.Text = text[4];             
-    }
-
-
-    protected void logout_Click(object sender, EventArgs e)
-    {
-
-    }
-}
+    </form>
+</body>
+</html>
