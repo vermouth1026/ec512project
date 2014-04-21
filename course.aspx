@@ -20,7 +20,8 @@
                     document.getElementById("psReviews").innerHTML = xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET", "reviews.aspx?id="+document.getElementById("pgNum").value, true);
+            xmlhttp.open("GET", "reviews.aspx?id=" + document.getElementById("num").textContent
+                + "_" + document.getElementById("pgNum").value, true);
             xmlhttp.send();
         }
     </script>
