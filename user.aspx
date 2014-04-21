@@ -62,7 +62,7 @@
                 <div id="edit" style="width: 100%; text-align: right"><a href="edit.aspx">[Edit]</a></div>
                 <div id="recommend" style="width: 100%; text-align: left">
                     <h3>Recommended Courses for You</h3>
-                    <div style="height: 30px; padding: 10px 10px 10px 10px; border: 1px solid silver; background-color: ivory">
+                    <div style="height: 30px; padding: 10px 10px 10px 10px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 40%; float: left; height: 30px">
                             <asp:HyperLink ID="rcmd1" runat="server" Text="EC500 XXXX XXXX XXXX" NavigateUrl="course.aspx"></asp:HyperLink>
                         </div>
@@ -72,7 +72,7 @@
                         <br style="clear: both" />
                     </div>
                     <br />
-                    <div style="height: 30px; padding: 10px 10px 10px 10px; border: 1px solid silver; background-color: ivory">
+                    <div style="height: 30px; padding: 10px 10px 10px 10px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 40%; float: left; height: 30px">
                             <asp:HyperLink ID="rcmd2" runat="server" Text="EC500 XXXX XXXX XXXX" NavigateUrl="course.aspx"></asp:HyperLink>
                         </div>
@@ -82,7 +82,7 @@
                         <br style="clear: both" />
                     </div>
                     <br />
-                    <div style="height: 30px; padding: 10px 10px 10px 10px; border: 1px solid silver; background-color: ivory">
+                    <div style="height: 30px; padding: 10px 10px 10px 10px; border: 1px solid silver; background-color: seashell">
                         <div style="width: 40%; float: left; height: 30px">
                             <asp:HyperLink ID="rcmd3" runat="server" Text="EC500 XXXX XXXX XXXX" NavigateUrl="course.aspx"></asp:HyperLink>
                         </div>

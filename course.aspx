@@ -91,7 +91,7 @@
             <div id="reviews" style="padding-left: 20px; padding-right: 20px; height: 800px">
                 <h3>Past Reviews</h3>
                 <div id="psReviews" style="padding-left: 10px; padding-right: 10px">
-                    <div style="border: 1px solid black; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: #FFFFBF">
+                    <div style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile1" runat="server" style="width: 15%; float: left; height: 150px">
                         </div>
                         <div style="width: 83%; float: right; height: 150px">
@@ -99,8 +99,11 @@
                                 <div style="float: left; width: 45%; padding-left: 10px">
                                     <asp:Label runat="server" ID="rcc1" Text="EC501 XXXXXX" />
                                 </div>
-                                <div style="float: right; width: 45%; text-align: center">
-                                    <asp:Label runat="server" ID="rcs1_0">5.0</asp:Label>
+                                <div style="float: right; width: 45%; text-align: right">
+                                    <asp:Label runat="server" ID="rcs1_0" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Tomato" ForeColor="White">&nbsp Total: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs1_1" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Orange" ForeColor="White">&nbsp Prof: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs1_2" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="deepskyblue" ForeColor="White">&nbsp Cont: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs1_3" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="seagreen" ForeColor="White">&nbsp Hard: 5 &nbsp</asp:Label>
                                 </div>
                             </div>
                             <div style="text-align: left; border: 1px solid silver; height: 100px; padding: 10px 10px 10px 10px; background-color: white">
@@ -109,7 +112,7 @@
                         </div>
                     </div>
                     <br />
-                    <div style="border: 1px solid black; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: cornsilk">
+                    <div style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile2" runat="server" style="width: 15%; float: left; height: 150px">
                         </div>
                         <div style="width: 83%; float: right; height: 150px">
@@ -117,8 +120,11 @@
                                 <div style="float: left; width: 45%; padding-left: 10px">
                                     <asp:Label runat="server" ID="rcc2" Text="EC502 XXXXXX" />
                                 </div>
-                                <div style="float: right; width: 45%; text-align: center">
-                                    <asp:Label runat="server" ID="rcs2_0">5.0</asp:Label>
+                                <div style="float: right; width: 45%; text-align: right">
+                                    <asp:Label runat="server" ID="rcs2_0" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Tomato" ForeColor="White">&nbsp Total: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs2_1" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Orange" ForeColor="White">&nbsp Prof: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs2_2" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="deepskyblue" ForeColor="White">&nbsp Cont: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs2_3" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="seagreen" ForeColor="White">&nbsp Hard: 5 &nbsp</asp:Label>
                                 </div>
                             </div>
                             <div style="text-align: left; border: 1px solid silver; height: 100px; padding: 10px 10px 10px 10px; background-color: white">
@@ -127,7 +133,7 @@
                         </div>
                     </div>
                     <br />
-                    <div style="border: 1px solid black; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: #FFFFBF">
+                    <div style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
                         <div id="profile3" runat="server" style="width: 15%; float: left; height: 150px">
                         </div>
                         <div style="width: 83%; float: right; height: 150px">
@@ -135,8 +141,11 @@
                                 <div style="float: left; width: 45%; padding-left: 10px">
                                     <asp:Label runat="server" ID="rcc3" Text="EC503 XXXXXX" />
                                 </div>
-                                <div style="float: right; width: 45%; text-align: center">
-                                    <asp:Label runat="server" ID="rcs3_0">5.0</asp:Label>
+                                 <div style="float: right; width: 45%; text-align: right">
+                                    <asp:Label runat="server" ID="rcs3_0" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Tomato" ForeColor="White">&nbsp Total: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs3_1" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="Orange" ForeColor="White">&nbsp Prof: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs3_2" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="deepskyblue" ForeColor="White">&nbsp Cont: 5 &nbsp</asp:Label>
+                                    <asp:Label runat="server" ID="rcs3_3" BorderColor="silver" BorderStyle="Solid" BorderWidth="1px" BackColor="seagreen" ForeColor="White">&nbsp Hard: 5 &nbsp</asp:Label>
                                 </div>
                             </div>
                             <div style="text-align: left; border: 1px solid silver; height: 100px; padding: 10px 10px 10px 10px; background-color: white">
@@ -239,8 +248,7 @@
         </div>
     </form>
     <script>
-        function mySubmit()
-        {
+        function mySubmit() {
             var text = document.forms[0].review;
             if (text.value === "") {
                 document.getElementById("errmsg").textContent = "Please fill in your review!";
@@ -250,13 +258,11 @@
             var rates = document.forms[0].rate0;
             var txt0 = "";
             var i;
-            for (i = 0; i < rates.length; i++)
-            {
+            for (i = 0; i < rates.length; i++) {
                 if (rates[i].checked)
                     txt0 = txt0 + rates[i].value;
             }
-            if (txt0 === "")
-            {
+            if (txt0 === "") {
                 document.getElementById("errmsg").textContent = "Please complete your ratings!";
                 return;
             }
