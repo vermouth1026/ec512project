@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 using System.Data.SqlClient;
+
 
 
 public partial class _Default : System.Web.UI.Page
 {
-
     private const string coursePage = "course.aspx";
     private const string courseListPage = "courselist.aspx";
     private const string loginPage = "login.aspx";
@@ -17,12 +18,26 @@ public partial class _Default : System.Web.UI.Page
     private const string userPage = "user.aspx";
     private const string homePage = "Default.aspx";
     private const string connString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
-
+    
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (User.Identity.IsAuthenticated)
+        {
+            navi1.Visible = false;
+            navi2.Visible = true;
+            greeting.Text = "Hello," + User.Identity.Name + "!";
+            string personId = getPersonId(User.Identity.Name);
+            mypage.NavigateUrl = "user.aspx?id=" + personId;
+        }
+        else
+        {
+            navi1.Visible = true;
+            navi2.Visible = false;
+        }
+        
         Load_UpperLeft();
         Load_UpperRight();
-        Load_Lower();
+        Load_Lower();        
     }
 
     private void Load_UpperLeft()
@@ -80,7 +95,7 @@ public partial class _Default : System.Web.UI.Page
             i++;
         }
         conn.Close();
-
+        
         mcc1.Text = s[0];
         mcc2.Text = s[1];
         mcc3.Text = s[2];
@@ -102,7 +117,7 @@ public partial class _Default : System.Web.UI.Page
         int dis_num = 5;
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall, COURSE.Score_Contents, COURSE.Score_Hardness, COURSE.Score_Professor from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) order by c.Datetime desc";
+        string cmdstr = "select c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall, COURSE.Score_Contents, COURSE.Score_Hardness, COURSE.Score_Professor from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) order by c.Datetime desc"; 
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
         int i = 0;
@@ -123,22 +138,41 @@ public partial class _Default : System.Web.UI.Page
         string[] img_pos = new string[dis_num];
         string[] img = new string[dis_num];
         string[] info = new string[dis_num];
-
+      
         while (rdr.Read() && i < dis_num)
         {
             courseCode[i] = (string)rdr["Code"];
             courseName[i] = (string)rdr["Course_Name"];
             text[i] = (string)rdr["Comments"];
-            score0[i] = Convert.ToString(rdr["Score_Overall"]).Substring(0, 1);
+            score0[i] = Convert.ToString(rdr["Score_Overall"]).Substring(0,1);
+            score1[i] = Convert.ToString(rdr["Score_Professor"]).Substring(0, 1);
+            score2[i] = Convert.ToString(rdr["Score_Contents"]).Substring(0, 1);
+            score3[i] = Convert.ToString(rdr["Score_Hardness"]).Substring(0, 1);
             student_name[i] = (string)rdr["Name"];
-            email[i] = (string)rdr["Email"] + "@bu.edu";
+            email[i] = (string)rdr["Email"]+"@bu.edu";
             img_pos[i] = (string)rdr["Image_Url"];
             student_id[i] = Convert.ToString(rdr["Person_Id"]);
             i++;
         }
 
+        
+        switch(i)
+        {
+            case 0:
+                rr1.Visible = false; rr2.Visible = false; rr3.Visible = false; rr4.Visible = false; rr5.Visible = false; break;
+            case 1:
+                rr2.Visible = false; rr3.Visible = false; rr4.Visible = false; rr5.Visible = false; break;
+            case 2:
+                rr3.Visible = false; rr4.Visible = false; rr5.Visible = false; break;
+            case 3:
+                rr4.Visible = false; rr5.Visible = false; break;
+            case 4:
+                rr5.Visible = false; break;
+            default: break;
+        }
+        
 
-        for (int j = 0; j < dis_num; j++)
+        for(int j = 0; j < dis_num; j++)
         {
             img[j] = "<img src=\"" + img_pos[j] + "\" alt=\"profile\" width = 150 />";
             //img[j] = "<p>" + img_pos[j] + "</p>";
@@ -200,12 +234,30 @@ public partial class _Default : System.Web.UI.Page
         rcs5_1.Text = "&nbsp Prof: " + score1[4] + " &nbsp";
         rcs5_2.Text = "&nbsp Total: " + score2[4] + " &nbsp";
         rcs5_3.Text = "&nbsp Total: " + score3[4] + " &nbsp";
-        comment5.Text = text[4];
+        comment5.Text = text[4];             
     }
 
 
     protected void logout_Click(object sender, EventArgs e)
     {
+        FormsAuthentication.SignOut();
+        navi1.Visible = true;
+        navi2.Visible = false;
+    }
 
+    private string getPersonId(string personName)
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select Id from PERSON where Name='" + personName + "'";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        string personId = "";
+        while(rdr.Read())
+        {
+            personId = Convert.ToString(rdr["Id"]);
+        }
+        conn.Close();
+        return personId;
     }
 }
