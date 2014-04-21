@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="user.aspx.cs" Inherits="user" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="user.aspx.cs" Inherits="user" %>
 
 <!DOCTYPE html>
 
@@ -30,7 +30,7 @@
                 </div>
                 <br style="clear: both" />
             </div>
-            <div style="width: 940px; border-top: 1px solid silver; border-bottom: 1px solid silver; padding: 30px 30px 30px 30px">
+            <div style="width: 940px; border-top: 1px solid silver; border-bottom: 1px solid silver; padding: 30px 30px 30px 30px; overflow:hidden">
                 <div style="width: 200px; height: 200px; float: left; padding-right: 20px">
                     <asp:Image runat="server" ID="myimg" Width="200px" Height="200px" ImageUrl="image\default.png" />
                 </div>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <div style="height: 200px; padding: 0px 30px 30px 30px">
+            <div style="padding: 0px 30px 30px 30px; overflow-y:hidden">
                 <h3>Comments</h3>
                 <div id="comments">
                     <div id="rr1" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 210px; padding: 30px 20px 20px 30px; background-color: seashell">
