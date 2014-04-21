@@ -72,8 +72,8 @@
                     </div>
                 </div>
             </div>
-            <input type="hidden" id="pgNum" name="pgNum" value="" />
-            <input type="hidden" id="corner" name="corner" value="" />
+            <input type="hidden" id="pgNum" name="pgNum" value="" runat="server" />
+            <input type="hidden" id="corner" name="corner" value="" runat="server" />
             <br style="clear: both" />
 
         </div>
