@@ -112,12 +112,13 @@
                     </select>
                 </div>
                 <br />
-                <div style="text-align:center"><label id="errmsg" style="color: red"></label></div>
+                <div style="text-align: center">
+                    <label id="errmsg" style="color: red"></label>
+                </div>
                 <br />
-                <div style="width: 180px">
-                    <input type="button" value="Submit" style="width: 80px" onclick="mySubmit()"/>&nbsp&nbsp
-                <input type="reset" value="Reset" style="width: 80px"/>
-                    <input type="hidden" id="slctcrs" name="selection" value=""/>
+                <div style="width: 70px">
+                    <input type="button" value="Submit" onclick="mySubmit()" />
+                    <input type="hidden" id="slctcrs" name="selection" value="" />
                 </div>
             </div>
         </div>
@@ -199,6 +200,6 @@
 
             document.getElementById("registration").submit();
         }
-        </script>
+    </script>
 </body>
 </html>
