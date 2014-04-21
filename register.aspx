@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="register.aspx.cs" Inherits="register" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="register.aspx.cs" Inherits="register" %>
 
 <!DOCTYPE html>
 
@@ -34,14 +34,14 @@
                         <input type="text" id="email" name="email" />
                         <label style="font-size: large">@bu.edu</label><br />
                         <select id="spec" name="spec">
-                            <option value="Computer Communications/Networks">Computer Communications/Networks</option>
-                            <option value="Software">Software</option>
-                            <option value="Hardware">Hardware</option>
-                            <option value="Cyber Security">Cyber Security</option>
-                            <option value="Systems and Control">Systems and Control</option>
-                            <option value="Signal Processing and Communications">Signal Processing and Communications</option>
-                            <option value="Electromagnetics and Photonics">Electromagnetics and Photonics</option>
-                            <option value="Solid-State Circuits, Devices and Materials">Solid-State Circuits, Devices and Materials</option>
+                            <option value="1">Computer Communications/Networks</option>
+                            <option value="2">Software</option>
+                            <option value="3">Hardware</option>
+                            <option value="4">Cyber Security</option>
+                            <option value="5">Systems and Control</option>
+                            <option value="6">Signal Processing and Communications</option>
+                            <option value="7">Electromagnetics and Photonics</option>
+                            <option value="8">Solid-State Circuits, Devices and Materials</option>
                         </select><br />
                     </div>
                 </div>
@@ -123,12 +123,10 @@
         </div>
     </form>
     <script>
-        function addCourse()
-        {
+        function addCourse() {
             var items = document.getElementById("allcrs");
             var index = items.selectedIndex;
-            if (index === -1)
-            {
+            if (index === -1) {
                 document.getElementById("errmsg").innerHTML = "Please select a course to add.";
                 return;
             }
@@ -136,8 +134,7 @@
 
             var crs = items.options.item(index);
             var newItem = document.getElementById("crses");
-            if (newItem.options.length > 7)
-            {
+            if (newItem.options.length > 7) {
                 document.getElementById("errmsg").innerHTML = "You couldn't have selected over 8 courses!";
                 return;
             }
@@ -161,10 +158,8 @@
             newItem.options.add(crs);
         }
 
-        function mySubmit()
-        {
-            if (document.getElementById("username").value === "")
-            {
+        function mySubmit() {
+            if (document.getElementById("username").value === "") {
                 document.getElementById("errmsg").innerHTML = "Please enter a username.";
                 return;
             }
@@ -198,8 +193,7 @@
 
             var i;
             var temp = document.getElementById("slctcrs");
-            for (i = 0; i < len; i++)
-            {
+            for (i = 0; i < len; i++) {
                 temp.value += document.getElementById("crses").options[i].value;
             }
 
