@@ -59,7 +59,7 @@
                     <a href="course.aspx">EC500 XXXX XXXX XXXX XXXX</a><br />
                 </div>
                 <br style="clear: both" />
-                <div id="edit" style="width: 100%; text-align: right"><a href="edit.aspx">[Edit]</a></div>
+                <div id="edit" runat="server" style="width: 100%; text-align: right"><a href="edit.aspx">[Edit]</a></div>
                 <div id="recommend" runat="server" style="width: 100%; text-align: left">
                     <h3>Recommended Courses for You</h3>
                     <div style="height: 30px; padding: 10px 10px 10px 10px; border: 1px solid silver; background-color: seashell">
