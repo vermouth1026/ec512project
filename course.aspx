@@ -193,7 +193,7 @@
                 </div>
                 <div style="padding-left: 10px">
                     <button runat="server" type="button" id="next" onclick="loadNextPage()" style="width: 110px; float:left">Next Page</button>
-                    <button runat="server" type="button" id="last" onclick="loadPreviousPage()" style="width: 110px; display:none">Previous Page</button>
+                    <button type="button" id="last" onclick="loadPreviousPage()" style="width: 110px; display:none">Previous Page</button>
                 </div>
                 <br />
             </div>
