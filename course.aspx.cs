@@ -54,7 +54,8 @@ public partial class course : System.Web.UI.Page
             Info_Insert();   //data insert
         }
         check_comt();
-        if (cmted || auth)
+        auth = User.Identity.IsAuthenticated;
+        if (cmted || !auth)
         {
             myReview.Visible = false;
         }
@@ -170,7 +171,7 @@ public partial class course : System.Web.UI.Page
 
         for (int j = 0; j < dis_num; j++)
         {
-            img[j] = "<img src=\"" + img_pos[j] + "\" alt=\"profile\" width = 150 />";
+            img[j] = "<img src=\"" + img_pos[j] + "\" alt=\"profile\" width = 120 />";
             name_link[j] = "<a href = \"user.aspx?id=" + student_id[j] + "\" > " + student_name[j] + "</a>";
             course_link[j] = coursePage + "?id=" + courseCode[j];
             info[j] = img[j] + "</br>" + name_link[j] + "</br>" + email[j];
@@ -225,7 +226,7 @@ public partial class course : System.Web.UI.Page
         string email = null;
         while (rdr.Read())
         {
-            img = "<img src=\"" + (string)rdr["Image_Url"] + "\" alt=\"profile\" width = 150 />";
+            img = "<img src=\"" + (string)rdr["Image_Url"] + "\" alt=\"profile\" width = 120 />";
             name_link = (string)rdr["Name"];
             email = (string)rdr["Email"];
         }
@@ -308,7 +309,6 @@ public partial class course : System.Web.UI.Page
 
     private void check_comt()
     {
-
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
         string cmdstr = "select *from (select r.Person_Id from RATING r inner join COURSE c on r.Course_Id=c.Id where c.Code='" + c_id + "') a inner join PERSON p on a.Person_Id=p.Id where p.Name='" + usern + "'";
@@ -323,8 +323,8 @@ public partial class course : System.Web.UI.Page
         {
             cmted = true;
         }
-
     }
+
     protected void logout_Click(object sender, EventArgs e)
     {
         FormsAuthentication.SignOut();
