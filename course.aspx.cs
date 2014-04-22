@@ -54,7 +54,8 @@ public partial class course : System.Web.UI.Page
             Info_Insert();   //data insert
         }
         check_comt();
-        if (cmted || auth)
+        auth = User.Identity.IsAuthenticated;
+        if (cmted || !auth)
         {
             myReview.Visible = false;
         }
@@ -308,7 +309,6 @@ public partial class course : System.Web.UI.Page
 
     private void check_comt()
     {
-
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
         string cmdstr = "select *from (select r.Person_Id from RATING r inner join COURSE c on r.Course_Id=c.Id where c.Code='" + c_id + "') a inner join PERSON p on a.Person_Id=p.Id where p.Name='" + usern + "'";
@@ -323,8 +323,8 @@ public partial class course : System.Web.UI.Page
         {
             cmted = true;
         }
-
     }
+
     protected void logout_Click(object sender, EventArgs e)
     {
         FormsAuthentication.SignOut();
