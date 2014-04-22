@@ -232,8 +232,8 @@ public partial class _Default : System.Web.UI.Page
         rcc5.NavigateUrl = course_link[4];
         rcs5_0.Text = "&nbsp Total: " + score0[4] + " &nbsp";
         rcs5_1.Text = "&nbsp Prof: " + score1[4] + " &nbsp";
-        rcs5_2.Text = "&nbsp Total: " + score2[4] + " &nbsp";
-        rcs5_3.Text = "&nbsp Total: " + score3[4] + " &nbsp";
+        rcs5_2.Text = "&nbsp Cont: " + score2[4] + " &nbsp";
+        rcs5_3.Text = "&nbsp Hard: " + score3[4] + " &nbsp";
         comment5.Text = text[4];             
     }
 

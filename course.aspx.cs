@@ -84,7 +84,7 @@ public partial class course : System.Web.UI.Page
             string score_o = "TOTAL<br>" + Convert.ToString(rdr["Score_Overall"]);
             string score_p = "Professor: " + Convert.ToString(rdr["Score_Professor"]);
             string score_c = "Contents:" + Convert.ToString(rdr["Score_Contents"]);
-            string score_h = "Hardness:" + Convert.ToString(rdr["Score_Hardness"]);
+            string score_h = "Difficulty:" + Convert.ToString(rdr["Score_Hardness"]);
             string disp = (string)rdr["Abstract"];
 
             num.Text = courseCode;
@@ -298,7 +298,7 @@ public partial class course : System.Web.UI.Page
 
         if (total_num <= 3)
         {
-            next.Visible = false;
+            buttons.Style.Add("display","none");
         } if (total_num > 3 && total_num <= 6)
         {
             corner.Value = "last";

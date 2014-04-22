@@ -121,7 +121,7 @@
                 <br style="clear: both" />
                 <div style="width: 100%; padding-top: 25px; padding-bottom: 25px" id="description" runat="server">Description goes here.</div>
             </div>
-            <div id="reviews" style="padding-left: 20px; padding-right: 20px; height: 800px">
+            <div id="reviews" style="padding: 0px 20px 30px 20px; overflow-y: hidden">
                 <h3>Past Reviews</h3>
                 <div id="psReviews" style="padding-left: 10px; padding-right: 10px">
                     <div id="review1" runat="server" style="border: 1px solid silver; border-radius: 10px; height: 160px; padding: 30px 20px 20px 30px; background-color: seashell">
@@ -188,14 +188,12 @@
                     </div>
                     <input type="hidden" id="pgNum" name="pgNum" value="1" />
                     <input runat="server" type="hidden" id="corner" name="corner" value="1st" />
-                    <br style="clear: both" />
-
                 </div>
-                <div style="padding-left: 10px">
-                    <button runat="server" type="button" id="next" onclick="loadNextPage()" style="width: 110px; float: left">Next Page</button>
+                <div runat="server" id="buttons" style="padding-left: 10px">
+                    <br />
                     <button type="button" id="last" onclick="loadPreviousPage()" style="width: 110px; display: none">Previous Page</button>
+                    <button type="button" id="next" onclick="loadNextPage()" style="width: 110px; float: left">Next Page</button>
                 </div>
-                <br />
             </div>
             <div runat="server" id="myReview" style="padding: 0px 20px 30px 20px; border-top: 1px solid silver">
                 <h3>My Review</h3>
