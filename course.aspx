@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="course.aspx.cs" Inherits="course" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="course.aspx.cs" Inherits="course" %>
 
 <!DOCTYPE html>
 
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <br style="clear: both" />
-                <div style="width: 100%; padding-top: 25px; padding-bottom: 25px" id="description">Description goes here.</div>
+                <div style="width: 100%; padding-top: 25px; padding-bottom: 25px" id="description" runat="server">Description goes here.</div>
             </div>
             <div id="reviews" style="padding-left: 20px; padding-right: 20px; height: 800px">
                 <h3>Past Reviews</h3>
