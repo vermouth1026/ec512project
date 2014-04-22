@@ -174,7 +174,7 @@ public partial class _Default : System.Web.UI.Page
 
         for(int j = 0; j < dis_num; j++)
         {
-            img[j] = "<img src=\"" + img_pos[j] + "\" alt=\"profile\" width = 150 />";
+            img[j] = "<img src=\"" + img_pos[j] + "\" alt=\"profile\" width = 120 />";
             //img[j] = "<p>" + img_pos[j] + "</p>";
             name_link[j] = "<a href = \"user.aspx?id=" + student_id[j] + "\" > " + student_name[j] + "</a>";
             course_link[j] = coursePage + "?id=" + courseCode[j];
