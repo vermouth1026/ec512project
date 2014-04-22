@@ -89,7 +89,7 @@ public partial class reviews : System.Web.UI.Page
 
         for (int j = 0; j < total_num; j++)
         {
-            img[j] = "<img src=\"" + img_pos[j] + "\" alt=\"profile\" width = 150 />";
+            img[j] = "<img src=\"" + img_pos[j] + "\" alt=\"profile\" width = 120 />";
             name_link[j] = "<a href = \"user.aspx?id=" + student_id[j] + "\" > " + student_name[j] + "</a>";
             info[j] = img[j] + "</br>" + name_link[j] + "</br>" + email[j];
         }
