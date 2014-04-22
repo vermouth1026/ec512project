@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 using System.Data.SqlClient;
 
 public partial class course : System.Web.UI.Page
@@ -19,13 +20,31 @@ public partial class course : System.Web.UI.Page
 
     private bool cmted = false;
     private bool auth = false;
-    private string usern = "jht";
+    private string usern = "";
 
     private const string connString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
 
     protected void Page_Load(object sender, EventArgs e)
     {
         this.c_id = Request.QueryString["id"];
+        usern = User.Identity.Name;
+
+        if (User.Identity.IsAuthenticated)
+        {
+            navi1.Visible = false;
+            navi2.Visible = true;
+            greeting.Text = "Hello," + User.Identity.Name + "!";
+            string personId = getPersonId(User.Identity.Name);
+            mypage.NavigateUrl = "user.aspx?id=" + personId;
+        }
+        else
+        {
+            navi1.Visible = true;
+            navi2.Visible = false;
+        }
+
+
+
         Load_Upper();
         Load_Middle();
         decidepag_num();
@@ -43,8 +62,6 @@ public partial class course : System.Web.UI.Page
         {
             Load_Bottom();
         }
-
-        
     }
 
     private void Load_Upper()
@@ -68,6 +85,7 @@ public partial class course : System.Web.UI.Page
             string score_p = "Professor: " + Convert.ToString(rdr["Score_Professor"]);
             string score_c = "Contents:" + Convert.ToString(rdr["Score_Contents"]);
             string score_h = "Hardness:" + Convert.ToString(rdr["Score_Hardness"]);
+            string disp = (string)rdr["Abstract"];
 
             num.Text = courseCode;
             name.Text = courseName;
@@ -76,6 +94,7 @@ public partial class course : System.Web.UI.Page
             score1.Text = score_p;
             score2.Text = score_c;
             score3.Text = score_h;
+            description.InnerText = disp;
         }
 
         conn.Close();
@@ -159,6 +178,15 @@ public partial class course : System.Web.UI.Page
 
         conn.Close();
 
+        switch(i)
+        {
+            case 0: { review1.Visible = false; review2.Visible = false; review3.Visible = false; break; }
+            case 1: { review2.Visible = false; review3.Visible = false; break; }
+            case 2: { review3.Visible = false; break; }
+            default: break;
+        }
+             
+
         profile1.InnerHtml = info[0];
         rcc1.Text = courseCode[0] + " " + courseName[0];
         rcs1_0.Text = "&nbsp Total: " + score0[0] + " &nbsp";
@@ -189,7 +217,7 @@ public partial class course : System.Web.UI.Page
 
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select * from PERSON where Name='"+usern+"'";
+        string cmdstr = "select * from PERSON where Name='" + usern + "'";
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
         string img = null;
@@ -198,11 +226,11 @@ public partial class course : System.Web.UI.Page
         while (rdr.Read())
         {
             img = "<img src=\"" + (string)rdr["Image_Url"] + "\" alt=\"profile\" width = 150 />";
-            name_link = "<a href = \"user.aspx?id=" + (string)rdr["Name"] + "\" > " + (string)rdr["Name"] + "</a>";
+            name_link = (string)rdr["Name"];
             email = (string)rdr["Email"];
         }
         conn.Close();
-        profile0.InnerHtml = img+"<br>"+name_link+"<br>"+email+"@bu.edu";
+        profile0.InnerHtml = img + "<br>" + name_link + "<br>" + email + "@bu.edu";
     }
 
     private void Info_Insert()
@@ -212,7 +240,7 @@ public partial class course : System.Web.UI.Page
         string cmdstr = "select Id from COURSE where Code='" + c_id + "'";
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
-        string courseId = "";   //"course_id"
+        string courseId = "";   //"course_id"        
         while (rdr.Read())
         {
             courseId = Convert.ToString(rdr["Id"]);
@@ -244,6 +272,15 @@ public partial class course : System.Web.UI.Page
         SqlCommand cmd2 = new SqlCommand(cmdstr, conn);
         cmd2.ExecuteNonQuery();
         conn.Close();
+
+        conn.Open();
+        cmdstr = "update COURSE set Score_Overall = (Score_Overall*Comment_Count+'" + score0 + "')/(Comment_Count+1),   Score_Professor = (Score_Professor*Comment_Count+'" + score1 + "')/(Comment_Count+1),   Score_Contents = (Score_Contents*Comment_Count+'" + score2 + "')/(Comment_Count+1),   Score_Hardness = (Score_Hardness*Comment_Count+'" + score3 + "')/(Comment_Count+1), Comment_Count = Comment_Count+1 where Id='" + courseId + "'";
+
+        //cmdstr = "update COURSE set Comment_Count = Comment_Count+1 where Id='" + courseId + "'";
+        SqlCommand cmd3 = new SqlCommand(cmdstr, conn);
+        cmd3.ExecuteNonQuery();
+        conn.Close();
+       
     }
 
     private void decidepag_num()
@@ -290,7 +327,24 @@ public partial class course : System.Web.UI.Page
     }
     protected void logout_Click(object sender, EventArgs e)
     {
+        FormsAuthentication.SignOut();
+        navi1.Visible = true;
+        navi2.Visible = false;
+    }
 
-
+    private string getPersonId(string personName)
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select Id from PERSON where Name='" + personName + "'";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        string personId = "";
+        while (rdr.Read())
+        {
+            personId = Convert.ToString(rdr["Id"]);
+        }
+        conn.Close();
+        return personId;
     }
 }
