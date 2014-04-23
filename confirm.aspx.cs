@@ -19,14 +19,18 @@ public partial class confirm : System.Web.UI.Page
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(checkIfRegistered(Request.Form["email"]))
+        if (checkIfExist(Request.Form["username"]))
+        {
+            msg.Text = "Username Existed!";
+        }
+        else if (checkIfRegistered(Request.Form["email"]))
         {
             msg.Text = "This email has been registered!"; //failed info
-        }
+        }        
         else
         {
             add_User();
-        }        
+        }
     }
 
     private bool checkIfRegistered(string email)
@@ -119,5 +123,25 @@ public partial class confirm : System.Web.UI.Page
         }
         conn.Close();
         return person_Id;
+    }
+
+    private bool checkIfExist(string s)
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select * from PERSON where Name = '" + s + "'";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        if (rdr.Read())
+        {
+            conn.Close();
+            return true;
+
+        }
+        else
+        {
+            conn.Close();
+            return false;
+        }
     }
 }
