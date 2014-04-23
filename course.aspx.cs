@@ -303,7 +303,7 @@ public partial class course : System.Web.UI.Page
 
         if (total_num <= 3)
         {
-            next.Visible = false;
+            buttons.Visible = false;
         } if (total_num > 3 && total_num <= 6)
         {
             corner.Value = "last";

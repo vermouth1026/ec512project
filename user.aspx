@@ -263,8 +263,6 @@
                             </div>
                         </div>
                     </div>
- 
-                    <br />
                 </div>
             </div>
         </div>
