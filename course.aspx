@@ -68,7 +68,7 @@
                     <a href="Default.aspx">Home</a>&nbsp&nbsp<a href="courselist.aspx">Course</a>
                 </div>
                 <div id="account1" style="width: 490px; float: right; text-align: right; padding-right: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
-                    <a href="login.aspx?ReturnUrl=course.aspx">Log in</a>&nbsp&nbsp<a href="register.aspx">Register</a>
+                    <a href="login.aspx?ReturnUrl=courselist.aspx">Log in</a>&nbsp&nbsp<a href="register.aspx">Register</a>
                 </div>
                 <br style="clear: both" />
             </div>
