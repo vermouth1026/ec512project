@@ -126,7 +126,7 @@ public partial class course : System.Web.UI.Page
             conn.Close();
             specText = specText + specName + "&nbsp";
         }
-        spec.Text = "Specialization: " + specName;
+        spec.Text = "Specialization: " + specText;
     }
 
     private void Load_Middle()
