@@ -19,8 +19,35 @@ public partial class confirm : System.Web.UI.Page
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        add_User();
+        if(checkIfRegistered(Request.Form["email"]))
+        {
+            msg.Text = "This email has been registered!"; //failed info
+        }
+        else
+        {
+            add_User();
+        }        
     }
+
+    private bool checkIfRegistered(string email)
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select * from PERSON where Email = '" + email + "'";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        if (rdr.Read())
+        {
+            conn.Close();
+            return true;
+        }
+        else
+        {
+            conn.Close();
+            return false;
+        }
+    }
+
 
     private void add_User()
     {
@@ -54,7 +81,6 @@ public partial class confirm : System.Web.UI.Page
         {
             addCourseToDatabase(person_id, seleAdd[i]);
         }
-
     }
 
     private void addCourseToDatabase(string person_Id, string courseCode)
@@ -94,5 +120,4 @@ public partial class confirm : System.Web.UI.Page
         conn.Close();
         return person_Id;
     }
-
 }
