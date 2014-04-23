@@ -38,7 +38,7 @@
                         <div style="width: 100%; height: 30px; text-align: left">
                         <asp:TextBox TextMode="Password" ID="password" Width="160px" Height="20px" runat="server"></asp:TextBox></div>
                         <br />
-                        <asp:Button id="submit" runat="server" Width="80px" Height="30px" Text="Log in"/>
+                        <asp:Button id="submit" runat="server" Width="80px" Height="30px" Text="Log in" OnClick="submit_Click"/>
                         <br />
                         <br />
                         <asp:Label runat="server" ID="error" ForeColor="red" Text="Da Shui Bi!"></asp:Label>
