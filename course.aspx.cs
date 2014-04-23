@@ -124,7 +124,7 @@ public partial class course : System.Web.UI.Page
                 specName = Convert.ToString(rdr2["Name"]);
             }
             conn.Close();
-            specText = specText + specName + "&nbsp";
+            specText = specText + specName + ", &nbsp";
         }
         spec.Text = "Specialization: " + specText;
     }
