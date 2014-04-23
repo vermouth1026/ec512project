@@ -118,7 +118,7 @@ public partial class course : System.Web.UI.Page
             conn.Open();
             cmdstr = "select Name from SPECIALIZATION where Id='" + specID[i] + "'";
             SqlCommand cmd2 = new SqlCommand(cmdstr, conn);
-            SqlDataReader rdr2 = cmd2.ExecuteReader();            
+            SqlDataReader rdr2 = cmd2.ExecuteReader();
             while (rdr2.Read())
             {
                 specName = Convert.ToString(rdr2["Name"]);
@@ -183,14 +183,14 @@ public partial class course : System.Web.UI.Page
 
         conn.Close();
 
-        switch(i)
+        switch (i)
         {
             case 0: { review1.Visible = false; review2.Visible = false; review3.Visible = false; break; }
             case 1: { review2.Visible = false; review3.Visible = false; break; }
             case 2: { review3.Visible = false; break; }
             default: break;
         }
-             
+
 
         profile1.InnerHtml = info[0];
         rcc1.Text = courseCode[0] + " " + courseName[0];
@@ -285,7 +285,7 @@ public partial class course : System.Web.UI.Page
         SqlCommand cmd3 = new SqlCommand(cmdstr, conn);
         cmd3.ExecuteNonQuery();
         conn.Close();
-       
+
     }
 
     private void decidepag_num()
