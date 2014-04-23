@@ -277,6 +277,8 @@ public partial class user : System.Web.UI.Page
         FormsAuthentication.SignOut();
         navi1.Visible = true;
         navi2.Visible = false;
+        recommend.Visible = false;
+        edit.Visible = false;
     }
 
     private string getPersonId(string personName)
