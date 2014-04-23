@@ -85,7 +85,7 @@ public partial class course : System.Web.UI.Page
             string score_o = "TOTAL<br>" + Convert.ToString(rdr["Score_Overall"]);
             string score_p = "Professor: " + Convert.ToString(rdr["Score_Professor"]);
             string score_c = "Contents:" + Convert.ToString(rdr["Score_Contents"]);
-            string score_h = "Difficulty:" + Convert.ToString(rdr["Score_Hardness"]);
+            string score_h = "Hardness:" + Convert.ToString(rdr["Score_Hardness"]);
             string disp = (string)rdr["Abstract"];
 
             num.Text = courseCode;
@@ -107,21 +107,25 @@ public partial class course : System.Web.UI.Page
         string specID = "";
         while (rdr1.Read())
         {
-            specID = Convert.ToString(rdr1["Specialization_Id"]);
+            specID = specID + Convert.ToString(rdr1["Specialization_Id"]);
         }
         conn.Close();
 
-        conn.Open();
-        cmdstr = "select Name from SPECIALIZATION where Id='" + specID + "'";
-        SqlCommand cmd2 = new SqlCommand(cmdstr, conn);
-        SqlDataReader rdr2 = cmd2.ExecuteReader();
         string specName = "";
-        while (rdr2.Read())
+        string specText = "";
+        for (int i = 1; i < specID.Length; i++)
         {
-            specName = Convert.ToString(rdr2["Name"]);
+            conn.Open();
+            cmdstr = "select Name from SPECIALIZATION where Id='" + specID[i] + "'";
+            SqlCommand cmd2 = new SqlCommand(cmdstr, conn);
+            SqlDataReader rdr2 = cmd2.ExecuteReader();            
+            while (rdr2.Read())
+            {
+                specName = Convert.ToString(rdr2["Name"]);
+            }
+            conn.Close();
+            specText = specText + specName + "&nbsp";
         }
-        conn.Close();
-
         spec.Text = "Specialization: " + specName;
     }
 
@@ -299,7 +303,7 @@ public partial class course : System.Web.UI.Page
 
         if (total_num <= 3)
         {
-            buttons.Style.Add("display","none");
+            next.Visible = false;
         } if (total_num > 3 && total_num <= 6)
         {
             corner.Value = "last";
