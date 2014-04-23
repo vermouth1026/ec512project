@@ -28,7 +28,9 @@
                         <label style="font-size: 21px">Specialization:&nbsp&nbsp</label>
                     </div>
                     <div>
-                        <input type="text" id="username" name="username" /><br />
+                        <input type="text" runat="server" id="username" name="username" />
+                        <asp:Button runat="server" ID="check" Text="Check Username" OnClick="check_Click"/>
+                        <br />
                         <input type="password" id="psw" name="psw" /><br />
                         <input type="password" id="confirmpsw" name="confirmpsw" /><br />
                         <input type="text" id="email" name="email" />
