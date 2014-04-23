@@ -88,7 +88,7 @@ public partial class course : System.Web.UI.Page
             string score_h = "Hardness:" + Convert.ToString(rdr["Score_Hardness"]);
             string disp = (string)rdr["Abstract"];
 
-            num.Text = courseCode;
+            num.Text = courseCode.ToUpper();
             name.Text = courseName;
             prof.Text = professor;
             score0.Text = score_o;
