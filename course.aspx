@@ -59,7 +59,7 @@
     </script>
 </head>
 <body>
-    <form id="form1" runat="server" action="course.aspx">
+    <form id="form1" runat="server" action="confirm2.aspx">
         <div style="width: 1000px; border: 1px solid silver; background-color: white">
             <div id="logo" runat="server" style="width: 1000px; height: 120px">
             </div>
