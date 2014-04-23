@@ -41,7 +41,7 @@
                         <asp:Button id="submit" runat="server" Width="80px" Height="30px" Text="Log in" OnClick="submit_Click"/>
                         <br />
                         <br />
-                        <asp:Label runat="server" ID="error" ForeColor="red" Text="Da Shui Bi!"></asp:Label>
+                        <asp:Label runat="server" ID="error" ForeColor="red" Text=""></asp:Label>
                     </div>
                     <br style="clear: both" />
                 </div>
