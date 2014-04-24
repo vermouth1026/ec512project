@@ -81,7 +81,7 @@
                 </div>
                 <br style="clear: both" />
             </div>
-            <div style="width: 940px; border-top: 1px solid silver; border-bottom: 1px solid silver; height: 350px; padding: 30px 30px 30px 30px">
+            <div style="width: 940px; border-top: 1px solid silver; border-bottom: 1px solid silver; padding: 30px 30px 30px 30px; overflow: auto">
                 <div style="width: 416px; height: 246px; float: left; padding: 10px 10px 10px 10px; border: 2px solid black">
                     <asp:Label runat="server" ID="num" Font-Size="XX-Large">EC512</asp:Label>
                     <br />
@@ -119,7 +119,8 @@
                     </div>
                 </div>
                 <br style="clear: both" />
-                <div style="width: 100%; padding-top: 25px; padding-bottom: 25px" id="description" runat="server">Description goes here.</div>
+                <br />
+                <div style="width: 100%; height: 100px; overflow-y: auto" id="description" runat="server">Description goes here.</div>
             </div>
             <div id="reviews" style="padding: 0px 20px 30px 20px; overflow-y: hidden">
                 <h3>Past Reviews</h3>
