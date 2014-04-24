@@ -45,14 +45,13 @@ public partial class course : System.Web.UI.Page
 
 
 
-        Load_Upper();
-        Load_Middle();
+       
         decidepag_num();
-        if (Request.Form["rate0"] != null)
+        /*if (Request.Form["rate0"] != null)
         {
             c_id = Request.Form["cnum"];
             Info_Insert();   //data insert
-        }
+        }*/
         check_comt();
         auth = User.Identity.IsAuthenticated;
         if (cmted || !auth)
@@ -63,6 +62,8 @@ public partial class course : System.Web.UI.Page
         {
             Load_Bottom();
         }
+        Load_Upper();
+        Load_Middle();
     }
 
     private void Load_Upper()
@@ -113,7 +114,7 @@ public partial class course : System.Web.UI.Page
 
         string specName = "";
         string specText = "";
-        for (int i = 1; i < specID.Length; i++)
+        for (int i = 0; i < specID.Length; i++)
         {
             conn.Open();
             cmdstr = "select Name from SPECIALIZATION where Id='" + specID[i] + "'";
@@ -124,7 +125,7 @@ public partial class course : System.Web.UI.Page
                 specName = Convert.ToString(rdr2["Name"]);
             }
             conn.Close();
-            specText = specText + specName + ", &nbsp";
+            specText = specText + specName + " &nbsp &nbsp &nbsp";
         }
         spec.Text = "Specialization: " + specText;
     }
