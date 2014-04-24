@@ -20,6 +20,7 @@ public partial class course : System.Web.UI.Page
 
     private bool cmted = false;
     private bool auth = false;
+    private bool notchoose = true;
     private string usern = "";
 
     private const string connString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
@@ -53,8 +54,9 @@ public partial class course : System.Web.UI.Page
             Info_Insert();   //data insert
         }*/
         check_comt();
+        check_course();
         auth = User.Identity.IsAuthenticated;
-        if (cmted || !auth)
+        if (cmted || !auth||notchoose)
         {
             myReview.Visible = false;
         }
@@ -352,4 +354,17 @@ public partial class course : System.Web.UI.Page
         conn.Close();
         return personId;
     }
+
+     private void check_course()
+     {
+         SqlConnection conn = new SqlConnection(connString);
+         conn.Open();
+         string cmdstr = "select c.Code from (select Course_Id from PERSON p inner join SELECTION s on p.Id=s.Person_Id where p.Name='"+usern+"')a inner join COURSE c on a.Course_Id=c.Id where c.code='"+ c_id+"'";
+         SqlCommand cmd = new SqlCommand(cmdstr, conn);
+         SqlDataReader rdr = cmd.ExecuteReader();
+         while (rdr.Read())
+         {
+             notchoose = false;
+         }
+     }
 }
