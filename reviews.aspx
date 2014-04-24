@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="reviews.aspx.cs" Inherits="reviews" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="reviews.aspx.cs" Inherits="reviews" %>
 
 <!DOCTYPE html>
 
@@ -74,7 +74,7 @@
             </div>
             <input type="hidden" id="pgNum" name="pgNum" value="" runat="server" />
             <input type="hidden" id="corner" name="corner" value="" runat="server" />
-            <br style="clear: both" />
+
 
         </div>
     </form>
