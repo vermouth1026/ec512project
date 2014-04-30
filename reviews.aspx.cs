@@ -67,7 +67,7 @@ public partial class reviews : System.Web.UI.Page
         int i = 0;
         SqlConnection conn1 = new SqlConnection(connString);
         conn1.Open();
-        string cmdstr1 = "select * from (select c.Comment_Count,c.Code,c.Name as Course_Name,r.Person_Id,r.Comments,r.Score_Contents,r.Score_Hardness,r.Score_Overall,r.Score_Professor from RATING r inner join COURSE c on r.Course_Id=c.Id where c.Code='" + c_id + "') c inner join PERSON p on c.Person_Id=p.Id";
+        string cmdstr1 = "select * from (select c.Comment_Count,c.Code,c.Name as Course_Name,r.Person_Id,r.Comments,r.Score_Contents,r.Datetime,r.Score_Hardness,r.Score_Overall,r.Score_Professor from RATING r inner join COURSE c on r.Course_Id=c.Id where c.Code='" + c_id + "') c inner join PERSON p on c.Person_Id=p.Id order by Datetime desc";
         SqlCommand cmd1 = new SqlCommand(cmdstr1, conn1);
         SqlDataReader rdr1 = cmd1.ExecuteReader();
 
@@ -97,39 +97,39 @@ public partial class reviews : System.Web.UI.Page
         {
             profile1.InnerHtml = info[3 * (c_page - 1)];
             rcc1.Text = courseCode[3 * (c_page - 1)] + " " + courseName[3 * (c_page - 1)] + " ";
-            rcs1_0.Text = "&nbsp Total: &nbsp" + score[3 * (c_page - 1)] + " ";
-            rcs1_1.Text = "&nbsp Prof: &nbsp" + scorep[3 * (c_page - 1)] + " ";
-            rcs1_2.Text = "&nbsp Cont: &nbsp" + scorec[3 * (c_page - 1)] + " ";
-            rcs1_3.Text = "&nbsp Hard: &nbsp" + scoreh[3 * (c_page - 1)] + " ";
+            rcs1_0.Text = "&nbsp Total: " + score[3 * (c_page - 1)] + "&nbsp ";
+            rcs1_1.Text = "&nbsp Prof: " + scorep[3 * (c_page - 1)] + " &nbsp";
+            rcs1_2.Text = "&nbsp Cont: " + scorec[3 * (c_page - 1)] + " &nbsp";
+            rcs1_3.Text = "&nbsp Hard: " + scoreh[3 * (c_page - 1)] + " &nbsp";
             comment1.Text = text[3 * (c_page - 1)];
 
 
             profile2.InnerHtml = info[3 * (c_page - 1) + 1];
             rcc2.Text = courseCode[3 * (c_page - 1) + 1] + " " + courseName[3 * (c_page - 1) + 1] + " ";
-            rcs2_0.Text = "&nbsp Total: &nbsp" + score[3 * (c_page - 1) + 1] + " ";
-            rcs2_1.Text = "&nbsp Prof: &nbsp" + scorep[3 * (c_page - 1) + 1] + " ";
-            rcs2_2.Text = "&nbsp Cont: &nbsp" + scorec[3 * (c_page - 1) + 1] + " ";
-            rcs2_3.Text = "&nbsp Hard: &nbsp" + scoreh[3 * (c_page - 1) + 1] + " ";
+            rcs2_0.Text = "&nbsp Total: " + score[3 * (c_page - 1) + 1] + " &nbsp";
+            rcs2_1.Text = "&nbsp Prof: " + scorep[3 * (c_page - 1) + 1] + " &nbsp";
+            rcs2_2.Text = "&nbsp Cont: " + scorec[3 * (c_page - 1) + 1] + " &nbsp";
+            rcs2_3.Text = "&nbsp Hard: " + scoreh[3 * (c_page - 1) + 1] + " &nbsp";
             comment2.Text = text[3 * (c_page - 1) + 1];
 
 
 
             profile3.InnerHtml = info[3 * (c_page - 1) + 2];
             rcc3.Text = courseCode[3 * (c_page - 1) + 2] + " " + courseName[3 * (c_page - 1) + 2];
-            rcs3_0.Text = "&nbsp Total: &nbsp" + score[3 * (c_page - 1) + 2];
-            rcs3_1.Text = "&nbsp Prof: &nbsp" + scorep[3 * (c_page - 1) + 2];
-            rcs3_2.Text = "&nbsp Cont: &nbsp" + scorec[3 * (c_page - 1) + 2];
-            rcs3_3.Text = "&nbsp Hard: &nbsp" + scoreh[3 * (c_page - 1) + 2];
+            rcs3_0.Text = "&nbsp Total: " + score[3 * (c_page - 1) + 2] + " &nbsp";
+            rcs3_1.Text = "&nbsp Prof: " + scorep[3 * (c_page - 1) + 2] + " &nbsp";
+            rcs3_2.Text = "&nbsp Cont: " + scorec[3 * (c_page - 1) + 2] + " &nbsp";
+            rcs3_3.Text = "&nbsp Hard: " + scoreh[3 * (c_page - 1) + 2] + " &nbsp";
             comment3.Text = text[3 * (c_page - 1) + 2];
         }
         else if (total_num - 3 * (c_page - 1) == 1)
         {
             profile1.InnerHtml = info[3 * (c_page - 1)];
             rcc1.Text = courseCode[3 * (c_page - 1)] + " " + courseName[3 * (c_page - 1)] + " ";
-            rcs1_0.Text = "&nbsp Total: &nbsp" + score[3 * (c_page - 1)] + " ";
-            rcs1_1.Text = "&nbsp Prof: &nbsp" + scorep[3 * (c_page - 1)] + " ";
-            rcs1_2.Text = "&nbsp Cont: &nbsp" + scorec[3 * (c_page - 1)] + " ";
-            rcs1_3.Text = "&nbsp Hard: &nbsp" + scoreh[3 * (c_page - 1)] + " ";
+            rcs1_0.Text = "&nbsp Total: " + score[3 * (c_page - 1)] + "&nbsp ";
+            rcs1_1.Text = "&nbsp Prof: " + scorep[3 * (c_page - 1)] + " &nbsp";
+            rcs1_2.Text = "&nbsp Cont: " + scorec[3 * (c_page - 1)] + " &nbsp";
+            rcs1_3.Text = "&nbsp Hard: " + scoreh[3 * (c_page - 1)] + " &nbsp";
             comment1.Text = text[3 * (c_page - 1)];
 
             review3.Visible = false;
@@ -139,19 +139,19 @@ public partial class reviews : System.Web.UI.Page
         {
             profile1.InnerHtml = info[3 * (c_page - 1)];
             rcc1.Text = courseCode[3 * (c_page - 1)] + " " + courseName[3 * (c_page - 1)] + " ";
-            rcs1_0.Text = "&nbsp Total: &nbsp" + score[3 * (c_page - 1)] + " ";
-            rcs1_1.Text = "&nbsp Prof: &nbsp" + scorep[3 * (c_page - 1)] + " ";
-            rcs1_2.Text = "&nbsp Cont: &nbsp" + scorec[3 * (c_page - 1)] + " ";
-            rcs1_3.Text = "&nbsp Hard: &nbsp" + scoreh[3 * (c_page - 1)] + " ";
+            rcs1_0.Text = "&nbsp Total: " + score[3 * (c_page - 1)] + "&nbsp ";
+            rcs1_1.Text = "&nbsp Prof: " + scorep[3 * (c_page - 1)] + " &nbsp";
+            rcs1_2.Text = "&nbsp Cont: " + scorec[3 * (c_page - 1)] + " &nbsp";
+            rcs1_3.Text = "&nbsp Hard: " + scoreh[3 * (c_page - 1)] + " &nbsp";
             comment1.Text = text[3 * (c_page - 1)];
 
 
             profile2.InnerHtml = info[3 * (c_page - 1) + 1];
             rcc2.Text = courseCode[3 * (c_page - 1) + 1] + " " + courseName[3 * (c_page - 1) + 1] + " ";
-            rcs2_0.Text = "&nbsp Total: &nbsp" + score[3 * (c_page - 1) + 1] + " ";
-            rcs2_1.Text = "&nbsp Prof: &nbsp" + scorep[3 * (c_page - 1) + 1] + " ";
-            rcs2_2.Text = "&nbsp Cont: &nbsp" + scorec[3 * (c_page - 1) + 1] + " ";
-            rcs2_3.Text = "&nbsp Hard: &nbsp" + scoreh[3 * (c_page - 1) + 1] + " ";
+            rcs2_0.Text = "&nbsp Total: &nbsp" + score[3 * (c_page - 1) + 1] + "&nbsp ";
+            rcs2_1.Text = "&nbsp Prof: &nbsp" + scorep[3 * (c_page - 1) + 1] + " &nbsp";
+            rcs2_2.Text = "&nbsp Cont: &nbsp" + scorec[3 * (c_page - 1) + 1] + " &nbsp";
+            rcs2_3.Text = "&nbsp Hard: &nbsp" + scoreh[3 * (c_page - 1) + 1] + " &nbsp";
             comment2.Text = text[3 * (c_page - 1) + 1];
 
             review3.Visible = false;

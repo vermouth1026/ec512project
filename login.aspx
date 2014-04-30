@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,8 @@
 <body>
     <form id="form1" runat="server">
         <div style="width: 1000px; border: 1px solid silver; background-color: white; overflow: hidden">
-            <div id="logo" runat="server" style="width: 1000px; height: 120px">
+            <div id="logo" runat="server" style="width: 1000px; height: 150px">
+                <img src="image/logo.jpg" alt="logo" />
             </div>
             <div id="navi1" style="width: 1000px; border-top: 1px solid silver; overflow: hidden">
                 <div id="navigate1" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">
@@ -38,10 +39,10 @@
                         <div style="width: 100%; height: 30px; text-align: left">
                         <asp:TextBox TextMode="Password" ID="password" Width="160px" Height="20px" runat="server"></asp:TextBox></div>
                         <br />
-                        <asp:Button id="submit" runat="server" Width="80px" Height="30px" Text="Log in"/>
+                        <asp:Button id="submit" runat="server" Width="80px" Height="30px" Text="Log in" OnClick="submit_Click"/>
                         <br />
                         <br />
-                        <asp:Label runat="server" ID="error" ForeColor="red" Text="Da Shui Bi!"></asp:Label>
+                        <asp:Label runat="server" ID="error" ForeColor="red" Text=""></asp:Label>
                     </div>
                     <br style="clear: both" />
                 </div>

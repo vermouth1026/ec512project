@@ -10,7 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <div style="width: 1000px; border: 1px solid silver; background-color: white">
-            <div id="logo" runat="server" style="width: 1000px; height: 120px">
+            <div id="logo" runat="server" style="width: 1000px; height: 150px">
+                <img src="image/logo.jpg" alt="logo" />
             </div>
             <div id="navi1" runat="server" style="width: 1000px; border-top: 1px solid silver; overflow: hidden">
                 <div id="navigate1" style="width: 490px; float: left; padding-left: 10px; padding-top: 10px; height: 30px; background-color: cornsilk">

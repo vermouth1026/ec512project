@@ -16,6 +16,10 @@ public partial class user : System.Web.UI.Page
     private const string userPage = "user.aspx";
     private const string homePage = "Default.aspx";
 
+    private const string reasonText1 = "This course is most highly evaluated in your specialization!";
+    private const string reasonText2 = "This course is most popular in your specialization!";
+    private const string reasonText3 = "The professor of this course is fantastic!";
+
     private string userId = "0";
 
     private const string connString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
@@ -37,7 +41,7 @@ public partial class user : System.Web.UI.Page
         {
             navi1.Visible = true;
             navi2.Visible = false;
-        }        
+        }
 
 
         Load_UpperLeft();
@@ -50,7 +54,7 @@ public partial class user : System.Web.UI.Page
     {
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select p.Name, p.Email, p.Image_Url,s.Name as specialization from PERSON p inner join SPECIALIZATION s on p.Specialization_Id=s.Id where p.Id='" + userId + "'"; 
+        string cmdstr = "select p.Name, p.Email, p.Image_Url,s.Name as specialization from PERSON p inner join SPECIALIZATION s on p.Specialization_Id=s.Id where p.Id='" + userId + "'";
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
 
@@ -93,13 +97,13 @@ public partial class user : System.Web.UI.Page
             i++;
         }
 
-        string courseTitle = "<h3>My Courses:</h3><br>";
+        string courseTitle = "<h3>My Courses</h3><br>";
         string courseSelection = null;
-        for(int j = 0 ; j < courseDis; j ++)
+        for (int j = 0; j < courseDis; j++)
         {
             if (codeSelection[j] != null)
             {
-                string link = "<a href = \"course.aspx?id=" + codeSelection[j] + "\" > " + codeSelection[j] +": " + nameSelection[j] + "</a>";
+                string link = "<a href = \"course.aspx?id=" + codeSelection[j] + "\" > " + codeSelection[j] + ": " + nameSelection[j] + "</a>";
                 courseSelection = courseSelection + link + "<br>";
             }
             else break;
@@ -110,16 +114,17 @@ public partial class user : System.Web.UI.Page
     private void Load_Middle()
     {
 
-       if (userId != getPersonId(User.Identity.Name))
-       {
-           recommend.Visible = false;
-           edit.Visible = false;
-       }
-       else
-       {
-
-       }
-
+        if (userId != getPersonId(User.Identity.Name))
+        {
+            recommend.Visible = false;
+            edit.Visible = false;
+        }
+        else
+        {
+            recommend1();
+            recommend2();
+            recommend3();
+        }
 
     }
 
@@ -128,7 +133,7 @@ public partial class user : System.Web.UI.Page
         int dis_num = 8;
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string cmdstr = "select c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall, COURSE.Score_Contents, COURSE.Score_Hardness, COURSE.Score_Professor from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) where c.Person_Id='"+userId+"'";
+        string cmdstr = "select c.Comments,c.Email,c.Image_Url,c.Person_Id,c.Name,COURSE.Code,COURSE.Name as Course_Name,COURSE.Score_Overall, COURSE.Score_Contents, COURSE.Score_Hardness, COURSE.Score_Professor from ((select a.Course_Id,a.Comments,a.Datetime,a.Person_Id,b.Email,b.Name,b.Image_Url from RATING a inner join PERSON b on a.Person_Id=b.Id ) c inner join COURSE on COURSE.Id=c.Course_Id) where c.Person_Id='" + userId + "'";
         SqlCommand cmd = new SqlCommand(cmdstr, conn);
         SqlDataReader rdr = cmd.ExecuteReader();
         int i = 0;
@@ -268,7 +273,7 @@ public partial class user : System.Web.UI.Page
         rcs8_1.Text = "&nbsp Prof: " + score1[7] + " &nbsp";
         rcs8_2.Text = "&nbsp Total: " + score2[7] + " &nbsp";
         rcs8_3.Text = "&nbsp Total: " + score3[7] + " &nbsp";
-        comment8.Text = text[7]; 
+        comment8.Text = text[7];
     }
 
 
@@ -295,5 +300,117 @@ public partial class user : System.Web.UI.Page
         }
         conn.Close();
         return personId;
+    }
+
+    private void recommend1()
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select c.Id,c.Code,c.Name,c.Score_Overall,c.Comment_Count from (select cs.Course_Id from (select p.Specialization_Id from person p where p.Id='" + userId + "')s inner join COURSE_SPECIALIZATION cs on s.Specialization_Id=cs.Specialization_Id) cd inner join COURSE c on cd.Course_Id=c.Id order by c.Score_Overall desc";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        string courseCode = "";
+        string courseName = "";
+        while (rdr.Read())
+        {
+            string s = Convert.ToString(rdr["Id"]);
+            if (checkIfSelected(s))
+            {
+                continue;
+            }
+            else
+            {
+                courseCode = (string)rdr["Code"];
+                courseName = (string)rdr["Name"];
+                break;
+            }
+        }
+        conn.Close();
+        string disText = courseCode + ": " + courseName;
+        rcmd1.Text = disText;
+        rcmd1.NavigateUrl = "course.aspx?ID=" + courseCode;
+        reason1.Text = reasonText1;
+
+    }
+
+    private void recommend2()
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select c.Id,c.Code,c.Name,c.Score_Overall,c.Comment_Count from (select cs.Course_Id from (select p.Specialization_Id from person p where p.Id='" + userId + "')s inner join COURSE_SPECIALIZATION cs on s.Specialization_Id=cs.Specialization_Id) cd inner join COURSE c on cd.Course_Id=c.Id order by c.Comment_Count desc";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        string courseCode = "";
+        string courseName = "";
+        while (rdr.Read())
+        {
+            string s = Convert.ToString(rdr["Id"]);
+            if (checkIfSelected(s))
+            {
+                continue;
+            }
+            else
+            {
+                courseCode = (string)rdr["Code"];
+                courseName = (string)rdr["Name"];
+                break;
+            }
+        }
+        conn.Close();
+        string disText = courseCode + ": " + courseName;
+        rcmd2.Text = disText;
+        rcmd2.NavigateUrl = "course.aspx?ID=" + courseCode;
+        reason2.Text = reasonText2;
+
+    }
+
+    private void recommend3()
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select c.Score_Professor, c.Id,c.Code,c.Name,c.Score_Overall,c.Comment_Count from (select cs.Course_Id from (select p.Specialization_Id from person p where p.Id='" + userId + "')s inner join COURSE_SPECIALIZATION cs on s.Specialization_Id=cs.Specialization_Id) cd inner join COURSE c on cd.Course_Id=c.Id order by c.Score_Professor desc";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        string courseCode = "";
+        string courseName = "";
+        while (rdr.Read())
+        {
+            string s = Convert.ToString(rdr["Id"]);
+            if (checkIfSelected(s))
+            {
+                continue;
+            }
+            else
+            {
+                courseCode = (string)rdr["Code"];
+                courseName = (string)rdr["Name"];
+                break;
+            }
+        }
+        conn.Close();
+        string disText = courseCode + ": " + courseName;
+        rcmd3.Text = disText;
+        rcmd3.NavigateUrl = "course.aspx?ID=" + courseCode;
+        reason3.Text = reasonText3;
+    }
+
+
+    private bool checkIfSelected(string courseID)
+    {
+        SqlConnection conn = new SqlConnection(connString);
+        conn.Open();
+        string cmdstr = "select * from SELECTION where Course_Id = '" + courseID + "' and Person_Id = '" + userId + "'";
+        SqlCommand cmd = new SqlCommand(cmdstr, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        if (rdr.Read())
+        {
+            conn.Close();
+            return true;
+        }
+        else
+        {
+            conn.Close();
+            return false;
+        }
     }
 }

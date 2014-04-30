@@ -20,6 +20,7 @@ public partial class course : System.Web.UI.Page
 
     private bool cmted = false;
     private bool auth = false;
+    private bool notchoose = true;
     private string usern = "";
 
     private const string connString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
@@ -45,17 +46,17 @@ public partial class course : System.Web.UI.Page
 
 
 
-        Load_Upper();
-        Load_Middle();
+       
         decidepag_num();
-        if (Request.Form["rate0"] != null)
+        /*if (Request.Form["rate0"] != null)
         {
             c_id = Request.Form["cnum"];
             Info_Insert();   //data insert
-        }
+        }*/
         check_comt();
+        check_course();
         auth = User.Identity.IsAuthenticated;
-        if (cmted || !auth)
+        if (cmted || !auth||notchoose)
         {
             myReview.Visible = false;
         }
@@ -63,6 +64,8 @@ public partial class course : System.Web.UI.Page
         {
             Load_Bottom();
         }
+        Load_Upper();
+        Load_Middle();
     }
 
     private void Load_Upper()
@@ -113,7 +116,7 @@ public partial class course : System.Web.UI.Page
 
         string specName = "";
         string specText = "";
-        for (int i = 1; i < specID.Length; i++)
+        for (int i = 0; i < specID.Length; i++)
         {
             conn.Open();
             cmdstr = "select Name from SPECIALIZATION where Id='" + specID[i] + "'";
@@ -124,9 +127,9 @@ public partial class course : System.Web.UI.Page
                 specName = Convert.ToString(rdr2["Name"]);
             }
             conn.Close();
-            specText = specText + specName + "&nbsp";
+            specText = specText + specName + " &nbsp &nbsp &nbsp";
         }
-        spec.Text = "Specialization: " + specName;
+        spec.Text = "Specialization: " + specText;
     }
 
     private void Load_Middle()
@@ -351,4 +354,18 @@ public partial class course : System.Web.UI.Page
         conn.Close();
         return personId;
     }
+
+     private void check_course()
+     {
+         SqlConnection conn = new SqlConnection(connString);
+         conn.Open();
+         string cmdstr = "select c.Code from (select Course_Id from PERSON p inner join SELECTION s on p.Id=s.Person_Id where p.Name='"+usern+"')a inner join COURSE c on a.Course_Id=c.Id where c.code='"+ c_id+"'";
+         SqlCommand cmd = new SqlCommand(cmdstr, conn);
+         SqlDataReader rdr = cmd.ExecuteReader();
+         while (rdr.Read())
+         {
+             notchoose = false;
+         }
+         conn.Close();
+     }
 }
