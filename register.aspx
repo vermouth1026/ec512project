@@ -25,7 +25,7 @@
             <div id="info" style="padding: 30px 30px 30px 30px; border-top: 1px solid silver; overflow: hidden; text-align: center">
                 <h3>Register</h3>
                 <div style="width: 800px; border: 1px solid silver; background-color: seashell; padding: 20px">
-                    <div style="width: 530px">
+                    <div style="width: 650px; overflow:hidden">
                         <div style="float: left">
                             <div style="text-align: right; height: 30px">
                                 <label>Username:&nbsp&nbsp</label>
@@ -69,6 +69,12 @@
                                     <option value="8">Solid-State Circuits, Devices and Materials</option>
                                 </select>
                             </div>
+                        </div>
+                        <div style="float:left">
+                            <img src="image/default.png" alt="profile" width="120" />
+                            <br />
+                            &nbsp&nbsp&nbsp&nbsp
+                            <asp:Button runat="server" Text="Upload" />
                         </div>
                         <br style="clear: both" />
                         <br />
@@ -126,18 +132,24 @@
                             <option value="782">EC782 Rf/Anlog Ic Des</option>
                         </select>&nbsp
                
-                    <div style="float: left">
-                        <br />
-                        <br />
-                        <br />
-                        &nbsp
                    
-                        <button type="button" onclick="addCourse()">></button><br />
-                        <br />
-                        &nbsp
+
+                        <div style="float: left">
+                            <br />
+                            <br />
+                            <br />
+                            &nbsp
                    
-                        <button type="button" onclick="rmCourse()"><</button>
-                    </div>
+                       
+
+                            <button type="button" onclick="addCourse()">></button><br />
+                            <br />
+                            &nbsp
+                   
+                       
+
+                            <button type="button" onclick="rmCourse()"><</button>
+                        </div>
                         <select size="10" id="crses" name="crses" style="width: 250px">
                         </select>
                     </div>
